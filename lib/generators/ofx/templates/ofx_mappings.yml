@@ -1,0 +1,33 @@
+# config/initializers/ofx_mappings.yml
+#
+# Each value is the Ruby attribute name exposed on the domain object.
+# Example: changing FITID from "fit_id" to "uid" means
+#   transaction.fit_id  →  transaction.uid
+#
+# Bank-specific XML tags not listed below can also be captured.
+# Simply add them to the relevant section:
+#
+#   STMTTRN:
+#     HISPAYEEMEMO: "extended_memo"    # → transaction.extended_memo
+#   BANKACCTFROM:
+#     AGENCIA: "branch_code"           # → account.branch_code
+#
+FIELDS:
+  STMTTRN:
+    FITID:    "fit_id"
+    TRNTYPE:  "type"
+    NAME:     "name"
+    MEMO:     "memo"
+    PAYEE:    "payee"
+    CHECKNUM: "check_number"
+    REFNUM:   "ref_number"
+    SIC:      "sic"
+
+  BANKACCTFROM:
+    BANKID:   "bank_id"
+    ACCTID:   "account_id"
+    ACCTTYPE: "account_type"
+    BRANCHID: "branch_id"
+
+  CCACCTFROM:
+    ACCTID: "account_id"

@@ -1,0 +1,19 @@
+FIELDS:
+  STMTTRN:
+    FITID:    "fit_id"
+    TRNTYPE:  "type"
+    NAME:     "name"
+    MEMO:     "memo"
+    PAYEE:    "payee"
+    CHECKNUM: "check_number"
+    REFNUM:   "ref_number"
+    SIC:      "sic"
+
+  BANKACCTFROM:
+    BANKID:   "bank_id"
+    ACCTID:   "account_id"
+    ACCTTYPE: "account_type"
+    BRANCHID: "branch_id"
+
+  CCACCTFROM:
+    ACCTID: "account_id"

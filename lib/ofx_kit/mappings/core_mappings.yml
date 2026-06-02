@@ -1,0 +1,23 @@
+SECTIONS:
+  STMTRS:       "bank_statement"
+  CCSTMTRS:     "credit_card_statement"
+  STMTTRN:      "transaction"
+  BANKACCTFROM: "bank_account"
+  CCACCTFROM:   "credit_card_account"
+  LEDGERBAL:    "balance"
+
+FIELDS:
+  STMTRS:
+    CURDEF: "currency"
+
+  CCSTMTRS:
+    CURDEF: "currency"
+
+  STMTTRN:
+    TRNAMT:   "amount"
+    DTPOSTED: "posted_at"
+    DTUSER:   "occurred_at"
+
+  LEDGERBAL:
+    BALAMT: "amount"
+    DTASOF: "posted_at"

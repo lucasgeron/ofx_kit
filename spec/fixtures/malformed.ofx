@@ -1,0 +1,6 @@
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+
+This file is intentionally malformed and contains no OFX body.
