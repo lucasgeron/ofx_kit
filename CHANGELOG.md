@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] — 2026-06-02
+
+### Added
+- `/docs` directory with generated API documentation from RDoc to GitHub Pages
+- Updated README with instructions to generate docs locally and gem installation
+
 ## [1.0.0] — 2026-06-02
 
 ### Breaking changes

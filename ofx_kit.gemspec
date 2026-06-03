@@ -14,7 +14,9 @@ Gem::Specification.new do |s|
 
   s.metadata["homepage_uri"] = s.homepage
   s.metadata["source_code_uri"] = "https://github.com/lucasgeron/ofx_kit"
-  s.metadata["changelog_uri"] = "#{s.metadata["source_code_uri"]}/releases"
+  s.metadata["changelog_uri"] = "https://lucasgeron.github.io/ofx_kit/CHANGELOG_md"
+  s.metadata["documentation_uri"] = "https://lucasgeron.github.io/ofx_kit/"
+  s.metadata["rubygems_mfa_required"] = "true"
 
   s.required_ruby_version = '>= 3.2'
 

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>OFX Kit</title>
+
+
+  <meta name="keywords" content="ruby,documentation,OFX Kit">
+
+    <meta
+      name="description"
+      content="OFX Kit: badge. fury."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OFX Kit">
+
+
+  <meta
+    property="og:description"
+    content="API documentation for OFX Kit - Browse classes, modules, and methods"
+  >
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OFX Kit">
+
+
+  <meta
+    name="twitter:description"
+    content="API documentation for OFX Kit - Browse classes, modules, and methods"
+  >
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script
+  src="./js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="./js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="./css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="file has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="./index.html" class="navbar-brand">
+    OFX Kit
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="./CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="./OFX.html">OFX</a></code></summary><ul class="link-list nav-list"><li><code><a href="./OFX/Balance.html">Balance</a></code></li><li><code><a href="./OFX/BankAccount.html">BankAccount</a></code></li><li><code><a href="./OFX/BankStatement.html">BankStatement</a></code></li><li><details><summary><code><a href="./OFX/Base.html">Base</a></code></summary><ul class="link-list nav-list"><li><code><a href="./OFX/Base/Account.html">Account</a></code></li><li><code><a href="./OFX/Base/Document.html">Document</a></code></li><li><code><a href="./OFX/Base/Entity.html">Entity</a></code></li><li><code><a href="./OFX/Base/Statement.html">Statement</a></code></li></ul></details></li><li><details><summary><code><a href="./OFX/Configuration.html">Configuration</a></code></summary><ul class="link-list nav-list"><li><code><a href="./OFX/Configuration/DateParser.html">DateParser</a></code></li><li><code><a href="./OFX/Configuration/MappingApplicator.html">MappingApplicator</a></code></li><li><code><a href="./OFX/Configuration/SectionProxy.html">SectionProxy</a></code></li></ul></details></li><li><code><a href="./OFX/CreditCardAccount.html">CreditCardAccount</a></code></li><li><code><a href="./OFX/CreditCardStatement.html">CreditCardStatement</a></code></li><li><details><summary><code><a href="./OFX/Errors.html">Errors</a></code></summary><ul class="link-list nav-list"><li><code><a href="./OFX/Errors/ConfigurationError.html">ConfigurationError</a></code></li><li><code><a href="./OFX/Errors/EncodingError.html">EncodingError</a></code></li><li><code><a href="./OFX/Errors/Error.html">Error</a></code></li><li><code><a href="./OFX/Errors/InvalidBodyError.html">InvalidBodyError</a></code></li><li><code><a href="./OFX/Errors/InvalidHeaderError.html">InvalidHeaderError</a></code></li><li><code><a href="./OFX/Errors/MultipleStatementsError.html">MultipleStatementsError</a></code></li><li><code><a href="./OFX/Errors/ParseError.html">ParseError</a></code></li><li><code><a href="./OFX/Errors/UnsupportedVersionError.html">UnsupportedVersionError</a></code></li></ul></details></li><li><details><summary><code><a href="./OFX/Generators.html">Generators</a></code></summary><ul class="link-list nav-list"><li><code><a href="./OFX/Generators/EjectGenerator.html">EjectGenerator</a></code></li></ul></details></li><li><code><a href="./OFX/Parser.html">Parser</a></code></li><li><details><summary><code><a href="./OFX/Tokenizer.html">Tokenizer</a></code></summary><ul class="link-list nav-list"><li><code><a href="./OFX/Tokenizer/Base.html">Base</a></code></li><li><code><a href="./OFX/Tokenizer/OFX1.html">OFX1</a></code></li><li><code><a href="./OFX/Tokenizer/OFX2.html">OFX2</a></code></li></ul></details></li><li><code><a href="./OFX/Transaction.html">Transaction</a></code></li><li><code><a href="./OFX/TransactionCollection.html">TransactionCollection</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main">
+
+  
+<span id="label-OFX+Kit" class="legacy-anchor"></span>
+<h1 id="ofx-kit"><a href="#ofx-kit"><a href="OFX.html"><code>OFX</code></a> Kit</a></h1>
+
+<p><a href="https://badge.fury.io/rb/ofx_kit"><img src="https://badge.fury.io/rb/ofx_kit.svg" alt="Gem Version"></a> <a href="https://rubygems.org/gems/ofx_kit"><img src="https://img.shields.io/gem/dt/ofx_kit?label=Downloads" alt="Downloads"></a></p>
+
+<p>A Ruby gem for parsing <a href="OFX.html"><code>OFX</code></a> (Open Financial Exchange) files. Supports <a href="OFX.html"><code>OFX</code></a> 1.x (SGML) and <a href="OFX.html"><code>OFX</code></a> 2.x (XML), bank statements and credit card statements, with a fluent API and configurable field mappings.</p>
+
+<span id="label-Installation" class="legacy-anchor"></span>
+<h2 id="installation"><a href="#installation">Installation</a></h2>
+
+<p>Add to your Gemfile:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;</span><span class="ruby-string">ofx_kit</span><span class="ruby-string">&#39;</span>, <span class="ruby-string">&#39;</span><span class="ruby-string">~&gt; 1.0</span><span class="ruby-string">&#39;</span>
+</pre>
+
+<span id="label-Usage" class="legacy-anchor"></span>
+<h2 id="usage"><a href="#usage">Usage</a></h2>
+
+<span id="label-Basic+parsing" class="legacy-anchor"></span>
+<h3 id="basic-parsing"><a href="#basic-parsing">Basic parsing</a></h3>
+
+<pre class="ruby"><span class="ruby-comment"># Parse from a file path</span>
+<span class="ruby-identifier">ofx</span> = <span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">statement.ofx</span><span class="ruby-string">&quot;</span>)
+
+<span class="ruby-comment"># Parse from an IO object</span>
+<span class="ruby-identifier">ofx</span> = <span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">statement.ofx</span><span class="ruby-string">&quot;</span>))
+<span class="ruby-identifier">ofx</span> = <span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">raw_content</span>))
+
+<span class="ruby-comment"># Block form — yields the parser</span>
+<span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">statement.ofx</span><span class="ruby-string">&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">account_id</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<span id="label-Accessing+data" class="legacy-anchor"></span>
+<h3 id="accessing-data"><a href="#accessing-data">Accessing data</a></h3>
+
+<pre class="ruby"><span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">filename</span>      <span class="ruby-comment"># =&gt; &quot;statement.ofx&quot; (nil for IO inputs without a path)</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">headers</span>       <span class="ruby-comment"># =&gt; { &quot;VERSION&quot; =&gt; &quot;102&quot;, &quot;ENCODING&quot; =&gt; &quot;USASCII&quot;, ... }</span>
+
+<span class="ruby-comment"># Single-statement files</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">account</span>       <span class="ruby-comment"># =&gt; OFX::BankAccount or OFX::CreditCardAccount</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">transactions</span>  <span class="ruby-comment"># =&gt; Array of OFX::Transaction</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">balance</span>       <span class="ruby-comment"># =&gt; OFX::Balance</span>
+
+<span class="ruby-comment"># Multiple-statement files — use the plural forms</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">accounts</span>      <span class="ruby-comment"># =&gt; [OFX::BankAccount, ...]</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">statements</span>    <span class="ruby-comment"># =&gt; [OFX::BankStatement, ...]</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">balances</span>      <span class="ruby-comment"># =&gt; [OFX::Balance, ...]</span>
+</pre>
+
+<span id="label-Transactions" class="legacy-anchor"></span>
+<h3 id="transactions"><a href="#transactions">Transactions</a></h3>
+
+<pre class="ruby"><span class="ruby-identifier">t</span> = <span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">transactions</span>.<span class="ruby-identifier">first</span>
+
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">fit_id</span>        <span class="ruby-comment"># =&gt; &quot;20240115001&quot;       String</span>
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">type</span>          <span class="ruby-comment"># =&gt; &quot;DEBIT&quot;             String</span>
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">memo</span>          <span class="ruby-comment"># =&gt; &quot;Pagamento boleto&quot;  String</span>
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">posted_at</span>     <span class="ruby-comment"># =&gt; Time object</span>
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">amount</span>        <span class="ruby-comment"># =&gt; Money object (positive = credit, negative = debit)</span>
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">amount_cents</span>  <span class="ruby-comment"># =&gt; Integer (same as t.amount.fractional)</span>
+
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">amount</span>.<span class="ruby-identifier">currency</span>.<span class="ruby-identifier">iso_code</span>  <span class="ruby-comment"># =&gt; &quot;BRL&quot;</span>
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">amount</span>.<span class="ruby-identifier">to_d</span>               <span class="ruby-comment"># =&gt; BigDecimal(&quot;-150.50&quot;)</span>
+</pre>
+
+<span id="label-Credits-2C+debits-2C+and+scopes" class="legacy-anchor"></span>
+<h3 id="credits-debits-and-scopes"><a href="#credits-debits-and-scopes">Credits, debits, and scopes</a></h3>
+
+<p><code>stmt.transactions</code> and <code>account.transactions</code> both return an <a href="OFX/TransactionCollection.html"><code>OFX::TransactionCollection</code></a> with <code>.credits</code>, <code>.debits</code>, <code>length</code>, and the full <code>Enumerable</code> API:</p>
+
+<pre class="ruby"><span class="ruby-identifier">stmt</span> = <span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">statements</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-identifier">txns</span> = <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">transactions</span>           <span class="ruby-comment"># =&gt; OFX::TransactionCollection</span>
+
+<span class="ruby-identifier">txns</span>.<span class="ruby-identifier">length</span>                        <span class="ruby-comment"># =&gt; 2</span>
+<span class="ruby-identifier">txns</span>.<span class="ruby-identifier">credits</span>                       <span class="ruby-comment"># =&gt; TransactionCollection of positive amounts</span>
+<span class="ruby-identifier">txns</span>.<span class="ruby-identifier">debits</span>                        <span class="ruby-comment"># =&gt; TransactionCollection of negative amounts</span>
+<span class="ruby-identifier">txns</span>.<span class="ruby-identifier">total_credits</span>                 <span class="ruby-comment"># =&gt; Money (sum of positive transactions)</span>
+<span class="ruby-identifier">txns</span>.<span class="ruby-identifier">total_debits</span>                  <span class="ruby-comment"># =&gt; Money (sum of negative transactions)</span>
+<span class="ruby-identifier">txns</span>.<span class="ruby-identifier">net</span>                           <span class="ruby-comment"># =&gt; Money (total_credits + total_debits)</span>
+<span class="ruby-identifier">txns</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:</span><span class="ruby-value">memo</span>)                   <span class="ruby-comment"># =&gt; [&quot;Pagamento boleto&quot;, &quot;Deposito salario&quot;]</span>
+<span class="ruby-identifier">txns</span>.<span class="ruby-identifier">sort_by</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:</span><span class="ruby-value">posted_at</span>)          <span class="ruby-comment"># =&gt; Array, sorted by date</span>
+</pre>
+
+<span id="label-Balance" class="legacy-anchor"></span>
+<h3 id="balance"><a href="#balance">Balance</a></h3>
+
+<pre class="ruby"><span class="ruby-identifier">bal</span> = <span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">balance</span>
+<span class="ruby-identifier">bal</span>.<span class="ruby-identifier">amount</span>        <span class="ruby-comment"># =&gt; Money object</span>
+<span class="ruby-identifier">bal</span>.<span class="ruby-identifier">amount_cents</span>  <span class="ruby-comment"># =&gt; Integer</span>
+<span class="ruby-identifier">bal</span>.<span class="ruby-identifier">posted_at</span>     <span class="ruby-comment"># =&gt; Time object</span>
+</pre>
+
+<span id="label-Summary" class="legacy-anchor"></span>
+<h3 id="summary"><a href="#summary">Summary</a></h3>
+
+<pre class="ruby"><span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">summary</span>
+<span class="ruby-comment"># =&gt; {</span>
+<span class="ruby-comment">#   headers: { &quot;VERSION&quot; =&gt; &quot;102&quot;, ... },</span>
+<span class="ruby-comment">#   statements: {</span>
+<span class="ruby-comment">#     &quot;12345-6&quot; =&gt; {</span>
+<span class="ruby-comment">#       currency:      &quot;BRL&quot;,</span>
+<span class="ruby-comment">#       transactions:  { count: 2, net_cents: 284_950 },</span>
+<span class="ruby-comment">#       credits:       { count: 1, total_cents: 300_000 },</span>
+<span class="ruby-comment">#       debits:        { count: 1, total_cents: -15_050 },</span>
+<span class="ruby-comment">#       balance_cents: 500_000</span>
+<span class="ruby-comment">#     }</span>
+<span class="ruby-comment">#   }</span>
+<span class="ruby-comment"># }</span>
+</pre>
+
+<span id="label-Error+handling" class="legacy-anchor"></span>
+<h3 id="error-handling"><a href="#error-handling">Error handling</a></h3>
+
+<pre class="ruby"><span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">missing.ofx</span><span class="ruby-string">&quot;</span>)      <span class="ruby-comment"># =&gt; Errno::ENOENT</span>
+<span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">bad_header.ofx</span><span class="ruby-string">&quot;</span>)   <span class="ruby-comment"># =&gt; OFX::InvalidHeaderError</span>
+<span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">bad_xml.ofx</span><span class="ruby-string">&quot;</span>)      <span class="ruby-comment"># =&gt; OFX::InvalidBodyError</span>
+<span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">42</span>)                 <span class="ruby-comment"># =&gt; ArgumentError</span>
+
+<span class="ruby-comment"># Calling #account or #balance on a multi-statement file:</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">account</span>   <span class="ruby-comment"># =&gt; OFX::MultipleStatementsError (use `accounts`)</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">balance</span>   <span class="ruby-comment"># =&gt; OFX::MultipleStatementsError (use `balances`)</span>
+</pre>
+
+<span id="label-Configuration" class="legacy-anchor"></span>
+<h2 id="configuration"><a href="#configuration">Configuration</a></h2>
+
+<span id="label-Field+mappings" class="legacy-anchor"></span>
+<h3 id="field-mappings"><a href="#field-mappings">Field mappings</a></h3>
+
+<p>Use <code>map</code> to add new attributes or rename built-in ones:</p>
+
+<pre class="ruby"><span class="ruby-constant">OFX</span>.<span class="ruby-identifier">configure</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+  <span class="ruby-comment"># New field: your bank emits a tag the gem doesn&#39;t know about by default</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">bank_account</span>.<span class="ruby-identifier">map</span> <span class="ruby-string">&quot;</span><span class="ruby-string">AGENCIA</span><span class="ruby-string">&quot;</span>,      <span class="ruby-value">to</span><span class="ruby-value">:</span> <span class="ruby-string">&quot;</span><span class="ruby-string">branch_code</span><span class="ruby-string">&quot;</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">transaction</span>.<span class="ruby-identifier">map</span>  <span class="ruby-string">&quot;</span><span class="ruby-string">HISPAYEEMEMO</span><span class="ruby-string">&quot;</span>, <span class="ruby-value">to</span><span class="ruby-value">:</span> <span class="ruby-string">&quot;</span><span class="ruby-string">extended_memo</span><span class="ruby-string">&quot;</span>
+
+  <span class="ruby-comment"># Rename a built-in field to a name that fits your domain</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">transaction</span>.<span class="ruby-identifier">map</span> <span class="ruby-string">&quot;</span><span class="ruby-string">FITID</span><span class="ruby-string">&quot;</span>, <span class="ruby-value">to</span><span class="ruby-value">:</span> <span class="ruby-string">&quot;</span><span class="ruby-string">uid</span><span class="ruby-string">&quot;</span>   <span class="ruby-comment"># default is fit_id</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">transaction</span>.<span class="ruby-identifier">map</span> <span class="ruby-string">&quot;</span><span class="ruby-string">NAME</span><span class="ruby-string">&quot;</span>,  <span class="ruby-value">to</span><span class="ruby-value">:</span> <span class="ruby-string">&quot;</span><span class="ruby-string">payee_name</span><span class="ruby-string">&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">ofx</span> = <span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">statement.ofx</span><span class="ruby-string">&quot;</span>)
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">branch_code</span>               <span class="ruby-comment"># =&gt; &quot;0272&quot;</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">transactions</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">extended_memo</span>  <span class="ruby-comment"># =&gt; &quot;Tarifa bancaria&quot;</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">transactions</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">uid</span>            <span class="ruby-comment"># =&gt; &quot;20240115001&quot;</span>
+<span class="ruby-comment"># ofx.transactions.first.fit_id       # =&gt; nil (FITID is now mapped to uid)</span>
+</pre>
+
+<blockquote>
+<p><strong>Protected core fields</strong> — <code>CURDEF</code>, <code>TRNAMT</code>, <code>DTPOSTED</code>, <code>DTUSER</code>, <code>BALAMT</code>, <code>DTASOF</code> are used internally to build Money objects and parse dates. They cannot be renamed; attempting to do so raises <code>OFX::ConfigurationError</code>.</p>
+</blockquote>
+
+<span id="label-Loading+mappings+from+a+YAML+file" class="legacy-anchor"></span>
+<h3 id="loading-mappings-from-a-yaml-file"><a href="#loading-mappings-from-a-yaml-file">Loading mappings from a YAML file</a></h3>
+
+<p>For larger configurations or Rails apps, a YAML file is cleaner than inline <code>map</code> calls.</p>
+
+<p><strong>Rails</strong> — eject the template with:</p>
+
+<pre class="bash">rails generate ofx:eject</pre>
+
+<p>This creates <code>config/initializers/ofx_mappings.yml</code>, which the gem detects and loads automatically on boot — no <a href="OFX.html#method-c-configure"><code>OFX.configure</code></a> call needed.</p>
+
+<p><strong>Standalone</strong> — point <code>load_mappings</code> at any YAML file:</p>
+
+<pre class="ruby"><span class="ruby-constant">OFX</span>.<span class="ruby-identifier">configure</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">load_mappings</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">config/ofx_mappings.yml</span><span class="ruby-string">&quot;</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The file must have a <code>FIELDS:</code> top-level key:</p>
+
+<pre class="yaml">FIELDS:
+  STMTTRN:
+    HISPAYEEMEMO: extended_memo   # → transaction.extended_memo (new field)
+    FITID: uid                    # → transaction.uid  (default was fit_id)
+  BANKACCTFROM:
+    AGENCIA: branch_code          # → account.branch_code (new field)</pre>
+
+<span id="label-Silencing+warnings" class="legacy-anchor"></span>
+<h3 id="silencing-warnings"><a href="#silencing-warnings">Silencing warnings</a></h3>
+
+<p><code>transactions</code> and <code>balances</code> aggregate across all statements in a multi-statement file and emit a warning. To silence them:</p>
+
+<pre class="ruby"><span class="ruby-constant">OFX</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">multi_statement_warnings</span> = <span class="ruby-keyword">false</span>
+</pre>
+
+<span id="label-Currency" class="legacy-anchor"></span>
+<h3 id="currency"><a href="#currency">Currency</a></h3>
+
+<p>The <a href="OFX.html"><code>OFX</code></a> specification requires <code>CURDEF</code> in every statement (<code>STMTRS</code> / <code>CCSTMTRS</code>). If the tag is absent, the gem raises <a href="OFX/Errors/InvalidBodyError.html"><code>OFX::Errors::InvalidBodyError</code></a> rather than silently assuming a currency.</p>
+
+<span id="label-Rails" class="legacy-anchor"></span>
+<h3 id="rails"><a href="#rails">Rails</a></h3>
+
+<p><strong>Behavioral options</strong> — create a standard initializer:</p>
+
+<pre class="ruby"><span class="ruby-comment"># config/initializers/ofx.rb</span>
+<span class="ruby-constant">OFX</span>.<span class="ruby-identifier">configure</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">multi_statement_warnings</span> = <span class="ruby-keyword">false</span>  <span class="ruby-comment"># silence aggregation warnings</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<span id="label-Contributing" class="legacy-anchor"></span>
+<h2 id="contributing"><a href="#contributing">Contributing</a></h2>
+<ol><li>
+<p>Fork the repository and create a feature branch.</p>
+</li><li>
+<p>Install dependencies:</p>
+</li></ol>
+
+<p><code>bash   bundle install   </code></p>
+<ol><li>
+<p>Make your changes. Add or update specs to cover them.</p>
+</li><li>
+<p>Run the test suite and linter before opening a pull request:</p>
+</li></ol>
+
+<p><code>bash   bundle exec rspec   bundle exec rubocop   </code></p>
+
+<p>All tests must pass and RuboCop must report no offenses.</p>
+
+<span id="label-Generating+documentation+locally" class="legacy-anchor"></span>
+<h3 id="generating-documentation-locally"><a href="#generating-documentation-locally">Generating documentation locally</a></h3>
+
+<pre class="bash">bundle exec rake rdoc</pre>
+
+<span id="label-Testing+locally+via+console" class="legacy-anchor"></span>
+<h2 id="testing-locally-via-console"><a href="#testing-locally-via-console">Testing locally via console</a></h2>
+
+<p>You can exercise the gem interactively using <code>irb</code> from the project root. The <code>spec/fixtures/</code> directory contains sample <a href="OFX.html"><code>OFX</code></a> files ready to use.</p>
+
+<pre class="bash">bundle exec irb -r ./lib/ofx_kit</pre>
+
+<pre class="ruby"><span class="ruby-comment"># Parse a bank statement (OFX 1.x)</span>
+<span class="ruby-identifier">ofx</span> = <span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">spec/fixtures/bank_simple.ofx</span><span class="ruby-string">&quot;</span>)
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">account_id</span>   <span class="ruby-comment"># =&gt; &quot;12345-6&quot;</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">transactions</span>.<span class="ruby-identifier">length</span>  <span class="ruby-comment"># =&gt; 2</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">balance</span>.<span class="ruby-identifier">amount</span>       <span class="ruby-comment"># =&gt; Money object</span>
+
+<span class="ruby-comment"># Parse an OFX 2.x file</span>
+<span class="ruby-identifier">ofx</span> = <span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">spec/fixtures/bank_ofx2.ofx</span><span class="ruby-string">&quot;</span>)
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">headers</span>              <span class="ruby-comment"># =&gt; { &quot;VERSION&quot; =&gt; &quot;220&quot;, ... }</span>
+
+<span class="ruby-comment"># Parse a credit card statement</span>
+<span class="ruby-identifier">ofx</span> = <span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">spec/fixtures/credit_card.ofx</span><span class="ruby-string">&quot;</span>)
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">account</span>              <span class="ruby-comment"># =&gt; OFX::CreditCardAccount</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">transactions</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">amount</span>.<span class="ruby-identifier">to_d</span>  <span class="ruby-comment"># =&gt; BigDecimal</span>
+
+<span class="ruby-comment"># Multiple statements</span>
+<span class="ruby-identifier">ofx</span> = <span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">spec/fixtures/bank_multiple.ofx</span><span class="ruby-string">&quot;</span>)
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">accounts</span>.<span class="ruby-identifier">length</span>      <span class="ruby-comment"># =&gt; 2</span>
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">statements</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">account_id</span> }
+
+<span class="ruby-comment"># Try custom field mappings</span>
+<span class="ruby-constant">OFX</span>.<span class="ruby-identifier">configure</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">transaction</span>.<span class="ruby-identifier">map</span> <span class="ruby-string">&quot;</span><span class="ruby-string">HISPAYEEMEMO</span><span class="ruby-string">&quot;</span>, <span class="ruby-value">to</span><span class="ruby-value">:</span> <span class="ruby-string">&quot;</span><span class="ruby-string">extended_memo</span><span class="ruby-string">&quot;</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">ofx</span> = <span class="ruby-constant">OFX</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;</span><span class="ruby-string">spec/fixtures/bank_simple.ofx</span><span class="ruby-string">&quot;</span>)
+<span class="ruby-identifier">ofx</span>.<span class="ruby-identifier">transactions</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">extended_memo</span>
+<span class="ruby-constant">OFX</span>.<span class="ruby-identifier">reset_config!</span>  <span class="ruby-comment"># restore defaults between tests</span>
+</pre>
+
+<span id="label-License" class="legacy-anchor"></span>
+<h2 id="license"><a href="#license">License</a></h2>
+
+<p>MIT</p>
+
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

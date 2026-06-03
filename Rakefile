@@ -9,7 +9,7 @@ RSpec::Core::RakeTask.new(:spec)
 RDoc::Task.new do |rdoc|
   rdoc.main       = 'README.md'
   rdoc.title      = 'OFX Kit'
-  rdoc.rdoc_dir   = 'doc'
+  rdoc.rdoc_dir   = 'docs'
   rdoc.markup     = 'rdoc'
   rdoc.rdoc_files.include('README.md', 'CHANGELOG.md', 'lib/**/*.rb')
   rdoc.rdoc_files.exclude('lib/**/*_internal.rb')
