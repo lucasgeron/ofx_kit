@@ -10,9 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = 'OFX file parser for Ruby'
   s.description = 'Parses OFX 1.x and 2.x files into typed domain objects with a fluent API and configurable field mappings.'
   s.license     = 'MIT'
-  s.homepage    = 'https://github.com/lucasgeron/ofx_kit'
 
-  s.metadata["homepage_uri"] = s.homepage
   s.metadata["source_code_uri"] = "https://github.com/lucasgeron/ofx_kit"
   s.metadata["changelog_uri"] = "https://lucasgeron.github.io/ofx_kit/CHANGELOG_md"
   s.metadata["documentation_uri"] = "https://lucasgeron.github.io/ofx_kit/"
