@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] — 2026-06-02
+
+### Breaking changes
+- `OFX::Configuration#default_currency` removed — currency is always derived from `CURDEF` in the OFX file
+- Rails generator renamed from `rails generate ofx:eject` to `rails generate ofx_kit:eject`
+- Error classes split into individual files under `lib/ofx_kit/errors/`; require paths changed accordingly
+
+### Changed
+- Documentation migrated from YARD (`@return`/`@param`) to RDoc (`##`) throughout the codebase
+- `lib/ofx_kit/configuration.rb` removed — submodules (`core`, `section_proxy`, etc.) now loaded directly
+
+### Added
+- `rdoc` Rake task configured with `README.md`, `CHANGELOG.md`, and `lib/**/*.rb` as sources
+- README section with instructions to generate API docs locally via `rake rdoc`
+
 ## [0.1.0] — 2026-06-01
 
 ### Added

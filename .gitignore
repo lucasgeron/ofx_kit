@@ -1,4 +1,7 @@
 tmp/
 .claude/
+doc/
 docs/
 *.gem
+pkg/
+checksums/

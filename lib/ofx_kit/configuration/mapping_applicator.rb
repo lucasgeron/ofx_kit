@@ -2,9 +2,9 @@
 
 module OFX
   class Configuration
-    # Mixin included by {Base::Builder} to apply {Configuration} field mappings
+    # Mixin included by Base::Builder to apply Configuration field mappings
     # from an XML node onto a domain object. Reads XML text values, ensures
-    # custom attributes exist via {Base::Entity.ensure_attribute}, and assigns them.
+    # custom attributes exist via Base::Entity.ensure_attribute, and assigns them.
     module MappingApplicator
       private
 
@@ -23,7 +23,9 @@ module OFX
       def currency_for(node, section)
         xml_tag = OFX.config.xml_mappings_for(section).key('currency')
         value = xml_tag && text_at(node, xml_tag)
-        (value.nil? || value.empty?) ? OFX.config.default_currency : value
+        raise Errors::InvalidBodyError, 'Missing required CURDEF tag' if value.nil? || value.empty?
+
+        value
       end
 
       def text_at(node, css_tag)

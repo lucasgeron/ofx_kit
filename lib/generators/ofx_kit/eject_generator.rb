@@ -2,7 +2,8 @@
 
 require 'rails/generators'
 
-module Ofx
+module OFX
+  # Namespace for Rails generator classes provided by the ofx_kit gem.
   module Generators
     # Ejects OFX field mappings into the Rails application so they can be customized.
     #
@@ -10,8 +11,9 @@ module Ofx
     # mappings. The file is auto-detected and loaded by the OFX gem on boot —
     # no initializer or +OFX.configure+ call is needed.
     #
-    # @example
-    #   rails generate ofx:eject
+    # === Example
+    #
+    #   rails generate ofx_kit:eject
     class EjectGenerator < Rails::Generators::Base
       source_root File.expand_path('templates', __dir__)
 

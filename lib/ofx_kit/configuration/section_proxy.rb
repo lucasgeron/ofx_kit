@@ -2,6 +2,7 @@
 
 module OFX
   class Configuration
+    ##
     # Proxy object returned by section accessors (e.g. +OFX.config.transaction+).
     # Provides a fluent interface for adding individual user-layer field mappings.
     class SectionProxy
@@ -11,14 +12,22 @@ module OFX
         @xml_tag     = xml_tag
       end
 
-      # Maps an OFX XML key to a Ruby attribute name for this section.
-      # @param xml_key [String] the OFX XML element name
-      # @param to [String, Symbol] the Ruby attribute name to map to
-      # @raise [ConfigurationError] if xml_key is a core-protected field
+      ##
+      # Maps +xml_key+ (the OFX XML element name, String) to a Ruby attribute name
+      # via the +to+ keyword (String or Symbol) for this section.
+      #
+      # Raises Errors::ConfigurationError if +xml_key+ is a core-protected field.
+      #
+      # === Example: Map a custom bank-specific field
+      #
+      #   OFX.configure do |config|
+      #     config.transaction.map 'MYFIELD', to: :my_attribute
+      #   end
+      #   OFX.new("statement.ofx").transactions.first.my_attribute  #=> "custom value"
       def map(xml_key, to:)
         core_attr = @core_fields.dig(@xml_tag.to_s, xml_key.to_s)
         if core_attr
-          raise OFX::ConfigurationError,
+          raise OFX::Errors::ConfigurationError,
                 "Cannot override core mapping '#{@xml_tag}.#{xml_key}' (reserved as '#{core_attr}')"
         end
 

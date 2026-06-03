@@ -1,16 +1,21 @@
 # frozen_string_literal: true
 
 module OFX
-  module Tokenizer
+  module Tokenizer # :nodoc:
+    ##
     # Abstract base class for OFX tokenizers.
-    # Subclasses must implement {#parse!} to populate +@headers+ and +@body+
+    # Subclasses must implement #parse! to populate +@headers+ and +@body+
     # from the raw file content.
     class Base
-      # @return [Hash] parsed header key/value pairs
-      # @return [Nokogiri::XML::Document] parsed XML body
-      attr_reader :headers, :body
+      ##
+      # Parsed header key/value pairs (Hash).
+      attr_reader :headers
+      ##
+      # Parsed XML body (Nokogiri::XML::Document).
+      attr_reader :body
 
-      # @param content [String] raw OFX file content
+      ##
+      # Creates a new tokenizer and immediately parses +content+ (raw OFX String).
       def initialize(content)
         @content = content.dup.force_encoding('UTF-8')
         parse!

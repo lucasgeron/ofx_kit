@@ -42,41 +42,4 @@ RSpec.describe 'Multi-bank currency resolution' do
     end
   end
 
-  describe 'file with no CURDEF tag' do
-    subject(:parser) { OFX::Parser.new(fixture('bank_no_curdef.ofx')) }
-
-    it 'parses one statement' do
-      expect(parser.statements.length).to eq(1)
-    end
-
-    context 'when default_currency is the built-in default (USD)' do
-      it 'falls back to USD on account.currency' do
-        expect(parser.account.currency).to eq('USD')
-      end
-
-      it 'falls back to USD for transaction amount currency' do
-        expect(parser.transactions.first.amount.currency.iso_code).to eq('USD')
-      end
-
-      it 'falls back to USD for balance currency' do
-        expect(parser.balance.amount.currency.iso_code).to eq('USD')
-      end
-    end
-
-    context 'when default_currency is configured to EUR' do
-      before { OFX.configure { |c| c.default_currency = 'EUR' } }
-
-      it 'falls back to EUR on account.currency' do
-        expect(parser.account.currency).to eq('EUR')
-      end
-
-      it 'falls back to EUR for transaction amount currency' do
-        expect(parser.transactions.first.amount.currency.iso_code).to eq('EUR')
-      end
-
-      it 'falls back to EUR for balance currency' do
-        expect(parser.balance.amount.currency.iso_code).to eq('EUR')
-      end
-    end
-  end
 end

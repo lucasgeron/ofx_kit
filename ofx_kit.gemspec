@@ -12,15 +12,13 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.homepage    = 'https://github.com/lucasgeron/ofx_kit'
 
-  s.metadata = {
-    'source_code_uri'       => s.homepage,
-    'rubygems_mfa_required' => 'true'
-  }
+  s.metadata["homepage_uri"] = s.homepage
+  s.metadata["source_code_uri"] = "https://github.com/lucasgeron/ofx_kit"
+  s.metadata["changelog_uri"] = "#{s.metadata["source_code_uri"]}/releases"
 
-  s.required_ruby_version = '>= 3.4'
+  s.required_ruby_version = '>= 3.2'
 
-  s.files         = Dir['lib/**/*.{rb,yml}', 'README.md', 'LICENSE']
-  s.files        += Dir['lib/generators/**/*']
+  s.files = Dir['lib/**/*.{rb,yml}', 'README.md', 'LICENSE']
   s.require_paths = ['lib']
 
   s.add_dependency 'bigdecimal', '~> 3.1'
@@ -28,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'nokogiri',  '~> 1.13'
 
   s.add_development_dependency 'rake',    '~> 13.0'
+  s.add_development_dependency 'rdoc',    '~> 7.2.0'
   s.add_development_dependency 'rspec',   '~> 3.13'
   s.add_development_dependency 'rubocop', '~> 1.0'
 end

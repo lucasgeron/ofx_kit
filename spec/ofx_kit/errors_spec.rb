@@ -3,36 +3,36 @@
 require 'spec_helper'
 
 RSpec.describe 'OFX error hierarchy' do
-  it 'OFX::Error is the base class for all gem errors' do
-    expect(OFX::ParseError.ancestors).to include(OFX::Error)
-    expect(OFX::InvalidHeaderError.ancestors).to include(OFX::Error)
-    expect(OFX::InvalidBodyError.ancestors).to include(OFX::Error)
-    expect(OFX::UnsupportedVersionError.ancestors).to include(OFX::Error)
-    expect(OFX::EncodingError.ancestors).to include(OFX::Error)
-    expect(OFX::ConfigurationError.ancestors).to include(OFX::Error)
-    expect(OFX::MultipleStatementsError.ancestors).to include(OFX::Error)
+  it 'OFX::Errors::Error is the base class for all gem errors' do
+    expect(OFX::Errors::ParseError.ancestors).to include(OFX::Errors::Error)
+    expect(OFX::Errors::InvalidHeaderError.ancestors).to include(OFX::Errors::Error)
+    expect(OFX::Errors::InvalidBodyError.ancestors).to include(OFX::Errors::Error)
+    expect(OFX::Errors::UnsupportedVersionError.ancestors).to include(OFX::Errors::Error)
+    expect(OFX::Errors::EncodingError.ancestors).to include(OFX::Errors::Error)
+    expect(OFX::Errors::ConfigurationError.ancestors).to include(OFX::Errors::Error)
+    expect(OFX::Errors::MultipleStatementsError.ancestors).to include(OFX::Errors::Error)
   end
 
   it 'InvalidHeaderError is a ParseError' do
-    expect(OFX::InvalidHeaderError.ancestors).to include(OFX::ParseError)
+    expect(OFX::Errors::InvalidHeaderError.ancestors).to include(OFX::Errors::ParseError)
   end
 
   it 'InvalidBodyError is a ParseError' do
-    expect(OFX::InvalidBodyError.ancestors).to include(OFX::ParseError)
+    expect(OFX::Errors::InvalidBodyError.ancestors).to include(OFX::Errors::ParseError)
   end
 
   it 'errors carry a message' do
-    error = OFX::InvalidHeaderError.new('Missing VERSION field')
+    error = OFX::Errors::InvalidHeaderError.new('Missing VERSION field')
     expect(error.message).to eq('Missing VERSION field')
   end
 
   it 'UnsupportedVersionError exposes the version' do
-    error = OFX::UnsupportedVersionError.new('300')
+    error = OFX::Errors::UnsupportedVersionError.new('300')
     expect(error.message).to eq('Unsupported OFX version: 300')
     expect(error.version).to eq('300')
   end
 
-  it 'MultipleStatementsError is an OFX::Error' do
-    expect(OFX::MultipleStatementsError.new('msg').message).to eq('msg')
+  it 'MultipleStatementsError is an OFX::Errors::Error' do
+    expect(OFX::Errors::MultipleStatementsError.new('msg').message).to eq('msg')
   end
 end

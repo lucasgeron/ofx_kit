@@ -134,12 +134,12 @@ RSpec.describe OFX::Parser do
 
     it '#account raises MultipleStatementsError mentioning `accounts`' do
       expect { parser.account }
-        .to raise_error(OFX::MultipleStatementsError, /`accounts`/)
+        .to raise_error(OFX::Errors::MultipleStatementsError, /`accounts`/)
     end
 
     it '#balance raises MultipleStatementsError mentioning `balances`' do
       expect { parser.balance }
-        .to raise_error(OFX::MultipleStatementsError, /`balances`/)
+        .to raise_error(OFX::Errors::MultipleStatementsError, /`balances`/)
     end
 
     it '#accounts returns all accounts' do
@@ -170,7 +170,7 @@ RSpec.describe OFX::Parser do
   describe 'error handling' do
     it 'raises InvalidHeaderError for a malformed file' do
       expect { described_class.new(fixture('malformed.ofx')) }
-        .to raise_error(OFX::InvalidHeaderError)
+        .to raise_error(OFX::Errors::InvalidHeaderError)
     end
 
     it 'raises Errno::ENOENT for a missing file' do
@@ -185,7 +185,7 @@ RSpec.describe OFX::Parser do
 
     it 'raises InvalidBodyError for a malformed OFX2 file' do
       expect { described_class.new(fixture('malformed_ofx2.ofx')) }
-        .to raise_error(OFX::InvalidBodyError)
+        .to raise_error(OFX::Errors::InvalidBodyError)
     end
   end
 

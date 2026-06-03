@@ -4,7 +4,7 @@ require 'time'
 
 module OFX
   class Configuration
-    # Mixin included by {Base::Builder} to parse OFX date strings into +Time+ objects.
+    # Mixin included by Base::Builder to parse OFX date strings into +Time+ objects.
     # Handles the two formats found in OFX files (YYYYMMDD and YYYYMMDDHHMMSS),
     # stripping any timezone suffixes (e.g. +[+05:30]+) before parsing.
     module DateParser

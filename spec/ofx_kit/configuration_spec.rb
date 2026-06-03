@@ -54,12 +54,12 @@ RSpec.describe OFX::Configuration do
 
     it 'raises ConfigurationError when overriding a core transaction field' do
       expect { config.transaction.map 'TRNAMT', to: 'foobar' }
-        .to raise_error(OFX::ConfigurationError, /Cannot override core mapping.*TRNAMT/)
+        .to raise_error(OFX::Errors::ConfigurationError, /Cannot override core mapping.*TRNAMT/)
     end
 
     it 'raises ConfigurationError when overriding CURDEF on bank_statement' do
       expect { config.bank_statement.map 'CURDEF', to: 'foobar' }
-        .to raise_error(OFX::ConfigurationError, /Cannot override core mapping.*CURDEF/)
+        .to raise_error(OFX::Errors::ConfigurationError, /Cannot override core mapping.*CURDEF/)
     end
   end
 
@@ -83,7 +83,7 @@ RSpec.describe OFX::Configuration do
     it 'raises ConfigurationError when auto-loaded file tries to override a core field' do
       File.write(auto_load_path, "FIELDS:\n  STMTTRN:\n    TRNAMT: \"foobar\"\n")
       expect { described_class.new(auto_load_path: auto_load_path) }
-        .to raise_error(OFX::ConfigurationError, /Cannot override core mapping.*TRNAMT/)
+        .to raise_error(OFX::Errors::ConfigurationError, /Cannot override core mapping.*TRNAMT/)
     end
   end
 
@@ -108,13 +108,13 @@ RSpec.describe OFX::Configuration do
 
     it 'raises ConfigurationError for a missing file' do
       expect { config.load_mappings('nonexistent.yml') }
-        .to raise_error(OFX::ConfigurationError, /not found/)
+        .to raise_error(OFX::Errors::ConfigurationError, /not found/)
     end
 
     it 'raises ConfigurationError when FIELDS key is missing' do
       File.write(custom_yaml_path, "STMTTRN:\n  FOO: bar\n")
       expect { config.load_mappings(custom_yaml_path) }
-        .to raise_error(OFX::ConfigurationError, /missing.*FIELDS/)
+        .to raise_error(OFX::Errors::ConfigurationError, /missing.*FIELDS/)
     end
 
     it 'does not raise when FIELDS is present and OPTIONS is absent' do
@@ -125,25 +125,25 @@ RSpec.describe OFX::Configuration do
     it 'raises ConfigurationError for an unknown XML tag' do
       File.write(custom_yaml_path, "FIELDS:\n  UNKNOWN_TAG:\n    FOO: bar\n")
       expect { config.load_mappings(custom_yaml_path) }
-        .to raise_error(OFX::ConfigurationError, /Unknown section/)
+        .to raise_error(OFX::Errors::ConfigurationError, /Unknown section/)
     end
 
     it 'raises ConfigurationError when a mapping value is not a Hash' do
       File.write(custom_yaml_path, "FIELDS:\n  STMTTRN: \"oops this should be a hash\"\n")
       expect { config.load_mappings(custom_yaml_path) }
-        .to raise_error(OFX::ConfigurationError, /must be a Hash/)
+        .to raise_error(OFX::Errors::ConfigurationError, /must be a Hash/)
     end
 
     it 'raises ConfigurationError when overriding a core field via load_mappings' do
       File.write(custom_yaml_path, "FIELDS:\n  STMTTRN:\n    TRNAMT: \"foobar\"\n")
       expect { config.load_mappings(custom_yaml_path) }
-        .to raise_error(OFX::ConfigurationError, /Cannot override core mapping.*TRNAMT/)
+        .to raise_error(OFX::Errors::ConfigurationError, /Cannot override core mapping.*TRNAMT/)
     end
 
     it 'raises ConfigurationError when overriding CURDEF via load_mappings' do
       File.write(custom_yaml_path, "FIELDS:\n  STMTRS:\n    CURDEF: \"foobar\"\n")
       expect { config.load_mappings(custom_yaml_path) }
-        .to raise_error(OFX::ConfigurationError, /Cannot override core mapping.*CURDEF/)
+        .to raise_error(OFX::Errors::ConfigurationError, /Cannot override core mapping.*CURDEF/)
     end
   end
 
@@ -158,14 +158,4 @@ RSpec.describe OFX::Configuration do
     end
   end
 
-  describe 'default_currency' do
-    it 'defaults to USD' do
-      expect(config.default_currency).to eq('USD')
-    end
-
-    it 'can be configured' do
-      config.default_currency = 'BRL'
-      expect(config.default_currency).to eq('BRL')
-    end
-  end
 end

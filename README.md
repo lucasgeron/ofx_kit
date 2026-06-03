@@ -192,15 +192,9 @@ FIELDS:
 OFX.config.multi_statement_warnings = false
 ```
 
-### Default currency
+### Currency
 
-When a `TransactionCollection` is empty and has no statement context (e.g. an in-memory collection built in tests), aggregation methods like `total_credits` and `net` need a currency to produce a `Money.new(0, ...)` value. The fallback is `OFX.config.default_currency`, which defaults to `'USD'`:
-
-```ruby
-OFX.config.default_currency = 'BRL'
-```
-
-In normal usage this fallback is never reached — the gem wires every collection to its statement at parse time and reads the currency directly from `statement.account.currency`.
+The OFX specification requires `CURDEF` in every statement (`STMTRS` / `CCSTMTRS`). If the tag is absent, the gem raises `OFX::Errors::InvalidBodyError` rather than silently assuming a currency.
 
 ### Rails
 
@@ -231,6 +225,12 @@ end
    ```
 
 All tests must pass and RuboCop must report no offenses.
+
+### Generating documentation locally
+
+```bash
+bundle exec rake rdoc
+```
 
 ## Testing locally via console
 

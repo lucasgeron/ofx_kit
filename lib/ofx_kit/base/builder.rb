@@ -2,18 +2,22 @@
 
 module OFX
   module Base
-    # Constructs domain objects ({BankStatement}, {CreditCardStatement}, etc.)
-    # from a parsed {Base::Document}. Applies field mappings defined in {Configuration}
+    ##
+    # Constructs domain objects (BankStatement, CreditCardStatement, etc.)
+    # from a parsed Base::Document. Applies field mappings defined in Configuration
     # and converts raw OFX values (amounts, dates) into typed Ruby objects.
-    class Builder
+    class Builder # :nodoc:
       include Configuration::DateParser
       include Configuration::MappingApplicator
 
+      ##
+      # Creates a new builder for the given +document+ (Base::Document).
       def initialize(document)
         @document = document
       end
 
-      # @return [Array<BankStatement, CreditCardStatement>]
+      ##
+      # Returns all parsed statements (Array of BankStatement or CreditCardStatement).
       def statements
         @document.bank_statement_nodes.map { |n| build_bank_statement(n) } +
           @document.credit_card_statement_nodes.map { |n| build_credit_card_statement(n) }
