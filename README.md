@@ -12,7 +12,7 @@ A Ruby gem for parsing OFX (Open Financial Exchange) files. Supports OFX 1.x (SG
 Add to your Gemfile:
 
 ```ruby
-gem 'ofx_kit', '~> 1.0', '>= 1.0.2'
+gem 'ofx_kit', '~> 1.1'
 ```
 
 ## Usage
