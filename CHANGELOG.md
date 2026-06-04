@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] — 2026-06-04
+
+### Breaking changes
+- `OFX::Errors::*` module removed — error classes now live directly under `OFX`
+  (e.g. `OFX::ParseError`, `OFX::ConfigurationError`). Rescue from `OFX::Error`
+  to catch all gem exceptions.
+- Rails generator `ofx_kit:eject` removed in favour of `ofx_kit:install`
+- YAML-based field mappings removed: `OFX::Configuration#load_mappings` and
+  auto-loading of `config/initializers/ofx_mappings.yml` are no longer supported.
+  Use `OFX.configure { |c| c.section.map "TAG", to: "attr" }` in a Ruby initializer.
+
+### Added
+- Rails generator `ofx_kit:install` — creates `config/initializers/ofx_kit.rb`
+  with all field mapping options and behavioral settings pre-written and commented,
+  ready to uncomment and customize.
+
 ## [1.0.2] — 2026-06-02
 
 ### Changed
