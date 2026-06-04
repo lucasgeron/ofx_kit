@@ -5,17 +5,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class OFX::Errors::Error - OFX Kit</title>
+<title>class OFX::Error::MultipleStatements - OFX Kit</title>
 
 
   <meta
     name="keywords"
-    content="ruby,class,OFX::Errors::Error"
+    content="ruby,class,OFX::Error::MultipleStatements"
   >
 
     <meta
       name="description"
-      content="class OFX::Errors::Error: Base error class for all OFX-related exceptions."
+      content="class OFX::Error::MultipleStatements: Raised when a singular helper (e. account+, +#balance+) is called on a file that contains multiple statements."
     >
 
 
@@ -24,11 +24,11 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class OFX::Errors::Error - OFX Kit">
+<meta property="og:title" content="class OFX::Error::MultipleStatements - OFX Kit">
 
 
 
-    <meta property="og:description" content="Base error class for all OFX-related exceptions.">
+    <meta property="og:description" content="Raised when a singular helper (e. account+, +#balance+) is called on a file that contains multiple statements.">
 
 
 
@@ -36,11 +36,11 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class OFX::Errors::Error - OFX Kit">
+<meta name="twitter:title" content="class OFX::Error::MultipleStatements - OFX Kit">
 
 
 
-    <meta name="twitter:description" content="Base error class for all OFX-related exceptions.">
+    <meta name="twitter:description" content="Raised when a singular helper (e. account+, +#balance+) is called on a file that contains multiple statements.">
 
 
 
@@ -424,7 +424,7 @@
         <svg><use href="#icon-chevron"></use></svg>
       </span>
     </summary>
-    <ul><li>StandardError</li></ul>
+    <ul><li><a href="../Error.html">OFX::Error</a><ul><li>StandardError</li></ul></li></ul>
   </details>
 </div>
 
@@ -449,13 +449,13 @@
       </span>
     </summary>
 
-    <ul class="link-list nav-list"><li><details open><summary><code><a href="../../OFX.html">OFX</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Balance.html">Balance</a></code></li><li><code><a href="../../OFX/BankAccount.html">BankAccount</a></code></li><li><code><a href="../../OFX/BankStatement.html">BankStatement</a></code></li><li><details><summary><code><a href="../../OFX/Base.html">Base</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Base/Account.html">Account</a></code></li><li><code><a href="../../OFX/Base/Document.html">Document</a></code></li><li><code><a href="../../OFX/Base/Entity.html">Entity</a></code></li><li><code><a href="../../OFX/Base/Statement.html">Statement</a></code></li></ul></details></li><li><details><summary><code><a href="../../OFX/Configuration.html">Configuration</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Configuration/DateParser.html">DateParser</a></code></li><li><code><a href="../../OFX/Configuration/MappingApplicator.html">MappingApplicator</a></code></li><li><code><a href="../../OFX/Configuration/SectionProxy.html">SectionProxy</a></code></li></ul></details></li><li><code><a href="../../OFX/CreditCardAccount.html">CreditCardAccount</a></code></li><li><code><a href="../../OFX/CreditCardStatement.html">CreditCardStatement</a></code></li><li><details><summary><code><a href="../../OFX/Errors.html">Errors</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Errors/ConfigurationError.html">ConfigurationError</a></code></li><li><code><a href="../../OFX/Errors/EncodingError.html">EncodingError</a></code></li><li><code><a href="../../OFX/Errors/Error.html">Error</a></code></li><li><code><a href="../../OFX/Errors/InvalidBodyError.html">InvalidBodyError</a></code></li><li><code><a href="../../OFX/Errors/InvalidHeaderError.html">InvalidHeaderError</a></code></li><li><code><a href="../../OFX/Errors/MultipleStatementsError.html">MultipleStatementsError</a></code></li><li><code><a href="../../OFX/Errors/ParseError.html">ParseError</a></code></li><li><code><a href="../../OFX/Errors/UnsupportedVersionError.html">UnsupportedVersionError</a></code></li></ul></details></li><li><details><summary><code><a href="../../OFX/Generators.html">Generators</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Generators/EjectGenerator.html">EjectGenerator</a></code></li></ul></details></li><li><code><a href="../../OFX/Parser.html">Parser</a></code></li><li><details><summary><code><a href="../../OFX/Tokenizer.html">Tokenizer</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Tokenizer/Base.html">Base</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX1.html">OFX1</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX2.html">OFX2</a></code></li></ul></details></li><li><code><a href="../../OFX/Transaction.html">Transaction</a></code></li><li><code><a href="../../OFX/TransactionCollection.html">TransactionCollection</a></code></li></ul></details></li></ul>
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../../OFX.html">OFX</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Balance.html">Balance</a></code></li><li><code><a href="../../OFX/BankAccount.html">BankAccount</a></code></li><li><code><a href="../../OFX/BankStatement.html">BankStatement</a></code></li><li><details><summary><code><a href="../../OFX/Base.html">Base</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Base/Account.html">Account</a></code></li><li><code><a href="../../OFX/Base/Document.html">Document</a></code></li><li><code><a href="../../OFX/Base/Entity.html">Entity</a></code></li><li><code><a href="../../OFX/Base/Statement.html">Statement</a></code></li></ul></details></li><li><details><summary><code><a href="../../OFX/Configuration.html">Configuration</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Configuration/DateParser.html">DateParser</a></code></li><li><code><a href="../../OFX/Configuration/MappingApplicator.html">MappingApplicator</a></code></li><li><code><a href="../../OFX/Configuration/SectionProxy.html">SectionProxy</a></code></li></ul></details></li><li><code><a href="../../OFX/CreditCardAccount.html">CreditCardAccount</a></code></li><li><code><a href="../../OFX/CreditCardStatement.html">CreditCardStatement</a></code></li><li><details><summary><code><a href="../../OFX/Error.html">Error</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Error/InvalidBody.html">InvalidBody</a></code></li><li><code><a href="../../OFX/Error/InvalidConfiguration.html">InvalidConfiguration</a></code></li><li><code><a href="../../OFX/Error/InvalidHeader.html">InvalidHeader</a></code></li><li><code><a href="../../OFX/Error/MultipleStatements.html">MultipleStatements</a></code></li><li><code><a href="../../OFX/Error/Parse.html">Parse</a></code></li><li><code><a href="../../OFX/Error/UnsupportedEncoding.html">UnsupportedEncoding</a></code></li><li><code><a href="../../OFX/Error/UnsupportedVersion.html">UnsupportedVersion</a></code></li></ul></details></li><li><code><a href="../../OFX/Parser.html">Parser</a></code></li><li><details><summary><code><a href="../../OFX/Tokenizer.html">Tokenizer</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Tokenizer/Base.html">Base</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX1.html">OFX1</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX2.html">OFX2</a></code></li></ul></details></li><li><code><a href="../../OFX/Transaction.html">Transaction</a></code></li><li><code><a href="../../OFX/TransactionCollection.html">TransactionCollection</a></code></li></ul></details></li></ul>
   </details>
 </div>
 
 </nav>
 
-<main role="main" aria-labelledby="class-ofx-errors-error">
+<main role="main" aria-labelledby="class-ofx-error-multiplestatements">
   
   
     <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
@@ -468,27 +468,27 @@
       
       <li>
         
-        <a href="../../OFX/Errors.html">Errors</a><span class="separator">::</span>
+        <a href="../../OFX/Error.html">Error</a><span class="separator">::</span>
         
       </li>
       
       <li>
         
-        <span>Error</span>
+        <span>MultipleStatements</span>
         
       </li>
       
     </ol>
   
 
-  <span id="class-OFX::Errors::Error" class="legacy-anchor"></span>
-  <h1 id="class-ofx-errors-error" class="anchor-link class">
-    class OFX::Errors::Error
+  <span id="class-OFX::Error::MultipleStatements" class="legacy-anchor"></span>
+  <h1 id="class-ofx-error-multiplestatements" class="anchor-link class">
+    class OFX::Error::MultipleStatements
   </h1>
 
   <section class="description">
     
-<p><a href="../Base.html"><code>Base</code></a> error class for all OFX-related exceptions.</p>
+<p>Raised when a singular helper (e.g. <code>#account</code>, <code>#balance</code>) is called on a file that contains multiple statements. Use <code>#accounts</code> or <code>#balances</code> instead.</p>
 
   </section>
 

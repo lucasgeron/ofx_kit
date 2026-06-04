@@ -5,17 +5,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class OFX::Errors::ParseError - OFX Kit</title>
+<title>class OFX::Error - OFX Kit</title>
 
 
   <meta
     name="keywords"
-    content="ruby,class,OFX::Errors::ParseError"
+    content="ruby,class,OFX::Error"
   >
 
     <meta
       name="description"
-      content="class OFX::Errors::ParseError: Raised when the OFX file cannot be parsed."
+      content="class OFX::Error: Base class for all OFX Kit exceptions. Rescue from this to catch any gem error."
     >
 
 
@@ -24,11 +24,11 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class OFX::Errors::ParseError - OFX Kit">
+<meta property="og:title" content="class OFX::Error - OFX Kit">
 
 
 
-    <meta property="og:description" content="Raised when the OFX file cannot be parsed.">
+    <meta property="og:description" content="Base class for all OFX Kit exceptions. Rescue from this to catch any gem error.">
 
 
 
@@ -36,60 +36,60 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class OFX::Errors::ParseError - OFX Kit">
+<meta name="twitter:title" content="class OFX::Error - OFX Kit">
 
 
 
-    <meta name="twitter:description" content="Raised when the OFX file cannot be parsed.">
+    <meta name="twitter:description" content="Base class for all OFX Kit exceptions. Rescue from this to catch any gem error.">
 
 
 
 <script type="text/javascript">
-  var rdoc_rel_prefix = "../../";
-  var index_rel_prefix = "../../";
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
 </script>
 
 <script
-  src="../../js/theme-toggle.js?v=7.2.0"
+  src="../js/theme-toggle.js?v=7.2.0"
 ></script>
 
 <script
-  src="../../js/search_navigation.js?v=7.2.0"
+  src="../js/search_navigation.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="../../js/search_data.js?v=7.2.0"
+  src="../js/search_data.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="../../js/search_ranker.js?v=7.2.0"
+  src="../js/search_ranker.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="../../js/search_controller.js?v=7.2.0"
+  src="../js/search_controller.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="../../js/c_highlighter.js?v=7.2.0"
+  src="../js/c_highlighter.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="../../js/bash_highlighter.js?v=7.2.0"
+  src="../js/bash_highlighter.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="../../js/aliki.js?v=7.2.0"
+  src="../js/aliki.js?v=7.2.0"
   defer
 ></script>
 
 <link
-  href="../../css/rdoc.css?v=7.2.0"
+  href="../css/rdoc.css?v=7.2.0"
   rel="stylesheet"
 >
 
@@ -307,7 +307,7 @@
 </svg>
 
 <header class="top-navbar">
-  <a href="../../index.html" class="navbar-brand">
+  <a href="../index.html" class="navbar-brand">
     OFX Kit
   </a>
 
@@ -400,7 +400,7 @@
 
 
             <li>
-              <a href="../../CHANGELOG_md.html">
+              <a href="../CHANGELOG_md.html">
                 CHANGELOG
               </a>
             </li>
@@ -424,7 +424,7 @@
         <svg><use href="#icon-chevron"></use></svg>
       </span>
     </summary>
-    <ul><li><a href="Error.html">OFX::Errors::Error</a><ul><li>StandardError</li></ul></li></ul>
+    <ul><li>StandardError</li></ul>
   </details>
 </div>
 
@@ -449,46 +449,40 @@
       </span>
     </summary>
 
-    <ul class="link-list nav-list"><li><details open><summary><code><a href="../../OFX.html">OFX</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Balance.html">Balance</a></code></li><li><code><a href="../../OFX/BankAccount.html">BankAccount</a></code></li><li><code><a href="../../OFX/BankStatement.html">BankStatement</a></code></li><li><details><summary><code><a href="../../OFX/Base.html">Base</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Base/Account.html">Account</a></code></li><li><code><a href="../../OFX/Base/Document.html">Document</a></code></li><li><code><a href="../../OFX/Base/Entity.html">Entity</a></code></li><li><code><a href="../../OFX/Base/Statement.html">Statement</a></code></li></ul></details></li><li><details><summary><code><a href="../../OFX/Configuration.html">Configuration</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Configuration/DateParser.html">DateParser</a></code></li><li><code><a href="../../OFX/Configuration/MappingApplicator.html">MappingApplicator</a></code></li><li><code><a href="../../OFX/Configuration/SectionProxy.html">SectionProxy</a></code></li></ul></details></li><li><code><a href="../../OFX/CreditCardAccount.html">CreditCardAccount</a></code></li><li><code><a href="../../OFX/CreditCardStatement.html">CreditCardStatement</a></code></li><li><details><summary><code><a href="../../OFX/Errors.html">Errors</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Errors/ConfigurationError.html">ConfigurationError</a></code></li><li><code><a href="../../OFX/Errors/EncodingError.html">EncodingError</a></code></li><li><code><a href="../../OFX/Errors/Error.html">Error</a></code></li><li><code><a href="../../OFX/Errors/InvalidBodyError.html">InvalidBodyError</a></code></li><li><code><a href="../../OFX/Errors/InvalidHeaderError.html">InvalidHeaderError</a></code></li><li><code><a href="../../OFX/Errors/MultipleStatementsError.html">MultipleStatementsError</a></code></li><li><code><a href="../../OFX/Errors/ParseError.html">ParseError</a></code></li><li><code><a href="../../OFX/Errors/UnsupportedVersionError.html">UnsupportedVersionError</a></code></li></ul></details></li><li><details><summary><code><a href="../../OFX/Generators.html">Generators</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Generators/EjectGenerator.html">EjectGenerator</a></code></li></ul></details></li><li><code><a href="../../OFX/Parser.html">Parser</a></code></li><li><details><summary><code><a href="../../OFX/Tokenizer.html">Tokenizer</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Tokenizer/Base.html">Base</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX1.html">OFX1</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX2.html">OFX2</a></code></li></ul></details></li><li><code><a href="../../OFX/Transaction.html">Transaction</a></code></li><li><code><a href="../../OFX/TransactionCollection.html">TransactionCollection</a></code></li></ul></details></li></ul>
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../OFX.html">OFX</a></code></summary><ul class="link-list nav-list"><li><code><a href="../OFX/Balance.html">Balance</a></code></li><li><code><a href="../OFX/BankAccount.html">BankAccount</a></code></li><li><code><a href="../OFX/BankStatement.html">BankStatement</a></code></li><li><details><summary><code><a href="../OFX/Base.html">Base</a></code></summary><ul class="link-list nav-list"><li><code><a href="../OFX/Base/Account.html">Account</a></code></li><li><code><a href="../OFX/Base/Document.html">Document</a></code></li><li><code><a href="../OFX/Base/Entity.html">Entity</a></code></li><li><code><a href="../OFX/Base/Statement.html">Statement</a></code></li></ul></details></li><li><details><summary><code><a href="../OFX/Configuration.html">Configuration</a></code></summary><ul class="link-list nav-list"><li><code><a href="../OFX/Configuration/DateParser.html">DateParser</a></code></li><li><code><a href="../OFX/Configuration/MappingApplicator.html">MappingApplicator</a></code></li><li><code><a href="../OFX/Configuration/SectionProxy.html">SectionProxy</a></code></li></ul></details></li><li><code><a href="../OFX/CreditCardAccount.html">CreditCardAccount</a></code></li><li><code><a href="../OFX/CreditCardStatement.html">CreditCardStatement</a></code></li><li><details><summary><code><a href="../OFX/Error.html">Error</a></code></summary><ul class="link-list nav-list"><li><code><a href="../OFX/Error/InvalidBody.html">InvalidBody</a></code></li><li><code><a href="../OFX/Error/InvalidConfiguration.html">InvalidConfiguration</a></code></li><li><code><a href="../OFX/Error/InvalidHeader.html">InvalidHeader</a></code></li><li><code><a href="../OFX/Error/MultipleStatements.html">MultipleStatements</a></code></li><li><code><a href="../OFX/Error/Parse.html">Parse</a></code></li><li><code><a href="../OFX/Error/UnsupportedEncoding.html">UnsupportedEncoding</a></code></li><li><code><a href="../OFX/Error/UnsupportedVersion.html">UnsupportedVersion</a></code></li></ul></details></li><li><code><a href="../OFX/Parser.html">Parser</a></code></li><li><details><summary><code><a href="../OFX/Tokenizer.html">Tokenizer</a></code></summary><ul class="link-list nav-list"><li><code><a href="../OFX/Tokenizer/Base.html">Base</a></code></li><li><code><a href="../OFX/Tokenizer/OFX1.html">OFX1</a></code></li><li><code><a href="../OFX/Tokenizer/OFX2.html">OFX2</a></code></li></ul></details></li><li><code><a href="../OFX/Transaction.html">Transaction</a></code></li><li><code><a href="../OFX/TransactionCollection.html">TransactionCollection</a></code></li></ul></details></li></ul>
   </details>
 </div>
 
 </nav>
 
-<main role="main" aria-labelledby="class-ofx-errors-parseerror">
+<main role="main" aria-labelledby="class-ofx-error">
   
   
     <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
       
       <li>
         
-        <a href="../../OFX.html">OFX</a><span class="separator">::</span>
+        <a href="../OFX.html">OFX</a><span class="separator">::</span>
         
       </li>
       
       <li>
         
-        <a href="../../OFX/Errors.html">Errors</a><span class="separator">::</span>
-        
-      </li>
-      
-      <li>
-        
-        <span>ParseError</span>
+        <span>Error</span>
         
       </li>
       
     </ol>
   
 
-  <span id="class-OFX::Errors::ParseError" class="legacy-anchor"></span>
-  <h1 id="class-ofx-errors-parseerror" class="anchor-link class">
-    class OFX::Errors::ParseError
+  <span id="class-OFX::Error" class="legacy-anchor"></span>
+  <h1 id="class-ofx-error" class="anchor-link class">
+    class OFX::Error
   </h1>
 
   <section class="description">
     
-<p>Raised when the <a href="../../OFX.html"><code>OFX</code></a> file cannot be parsed.</p>
+<p><a href="Base.html"><code>Base</code></a> class for all <a href="../OFX.html"><code>OFX</code></a> Kit exceptions. Rescue from this to catch any gem error.</p>
 
   </section>
 

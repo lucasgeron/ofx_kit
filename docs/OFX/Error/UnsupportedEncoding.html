@@ -5,17 +5,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class OFX::Generators::EjectGenerator - OFX Kit</title>
+<title>class OFX::Error::UnsupportedEncoding - OFX Kit</title>
 
 
   <meta
     name="keywords"
-    content="ruby,class,OFX::Generators::EjectGenerator"
+    content="ruby,class,OFX::Error::UnsupportedEncoding"
   >
 
     <meta
       name="description"
-      content="class OFX::Generators::EjectGenerator: Ejects OFX field mappings into the Rails application so they can be customized. ofx_mappings."
+      content="class OFX::Error::UnsupportedEncoding: Raised when the file encoding cannot be handled."
     >
 
 
@@ -24,11 +24,11 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class OFX::Generators::EjectGenerator - OFX Kit">
+<meta property="og:title" content="class OFX::Error::UnsupportedEncoding - OFX Kit">
 
 
 
-    <meta property="og:description" content="Ejects OFX field mappings into the Rails application so they can be customized. ofx_mappings.">
+    <meta property="og:description" content="Raised when the file encoding cannot be handled.">
 
 
 
@@ -36,11 +36,11 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class OFX::Generators::EjectGenerator - OFX Kit">
+<meta name="twitter:title" content="class OFX::Error::UnsupportedEncoding - OFX Kit">
 
 
 
-    <meta name="twitter:description" content="Ejects OFX field mappings into the Rails application so they can be customized. ofx_mappings.">
+    <meta name="twitter:description" content="Raised when the file encoding cannot be handled.">
 
 
 
@@ -424,7 +424,7 @@
         <svg><use href="#icon-chevron"></use></svg>
       </span>
     </summary>
-    <ul><li>Rails::Generators::Base</li></ul>
+    <ul><li><a href="../Error.html">OFX::Error</a><ul><li>StandardError</li></ul></li></ul>
   </details>
 </div>
 
@@ -435,25 +435,6 @@
 
   
 
-
-  <div class="nav-section">
-    <details class="nav-section-collapsible" open>
-      <summary class="nav-section-header">
-        <span class="nav-section-icon">
-          <svg><use href="#icon-instance-methods"></use></svg>
-        </span>
-        <span class="nav-section-title">Instance Methods</span>
-        <span class="nav-section-chevron">
-          <svg><use href="#icon-chevron"></use></svg>
-        </span>
-      </summary>
-      <ul class="nav-list" role="directory">
-
-        <li ><a href="#method-i-eject_mappings">eject_mappings</a></li>
-
-      </ul>
-    </details>
-  </div>
 
 
   <div id="classindex-section" class="nav-section">
@@ -468,13 +449,13 @@
       </span>
     </summary>
 
-    <ul class="link-list nav-list"><li><details open><summary><code><a href="../../OFX.html">OFX</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Balance.html">Balance</a></code></li><li><code><a href="../../OFX/BankAccount.html">BankAccount</a></code></li><li><code><a href="../../OFX/BankStatement.html">BankStatement</a></code></li><li><details><summary><code><a href="../../OFX/Base.html">Base</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Base/Account.html">Account</a></code></li><li><code><a href="../../OFX/Base/Document.html">Document</a></code></li><li><code><a href="../../OFX/Base/Entity.html">Entity</a></code></li><li><code><a href="../../OFX/Base/Statement.html">Statement</a></code></li></ul></details></li><li><details><summary><code><a href="../../OFX/Configuration.html">Configuration</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Configuration/DateParser.html">DateParser</a></code></li><li><code><a href="../../OFX/Configuration/MappingApplicator.html">MappingApplicator</a></code></li><li><code><a href="../../OFX/Configuration/SectionProxy.html">SectionProxy</a></code></li></ul></details></li><li><code><a href="../../OFX/CreditCardAccount.html">CreditCardAccount</a></code></li><li><code><a href="../../OFX/CreditCardStatement.html">CreditCardStatement</a></code></li><li><details><summary><code><a href="../../OFX/Errors.html">Errors</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Errors/ConfigurationError.html">ConfigurationError</a></code></li><li><code><a href="../../OFX/Errors/EncodingError.html">EncodingError</a></code></li><li><code><a href="../../OFX/Errors/Error.html">Error</a></code></li><li><code><a href="../../OFX/Errors/InvalidBodyError.html">InvalidBodyError</a></code></li><li><code><a href="../../OFX/Errors/InvalidHeaderError.html">InvalidHeaderError</a></code></li><li><code><a href="../../OFX/Errors/MultipleStatementsError.html">MultipleStatementsError</a></code></li><li><code><a href="../../OFX/Errors/ParseError.html">ParseError</a></code></li><li><code><a href="../../OFX/Errors/UnsupportedVersionError.html">UnsupportedVersionError</a></code></li></ul></details></li><li><details><summary><code><a href="../../OFX/Generators.html">Generators</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Generators/EjectGenerator.html">EjectGenerator</a></code></li></ul></details></li><li><code><a href="../../OFX/Parser.html">Parser</a></code></li><li><details><summary><code><a href="../../OFX/Tokenizer.html">Tokenizer</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Tokenizer/Base.html">Base</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX1.html">OFX1</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX2.html">OFX2</a></code></li></ul></details></li><li><code><a href="../../OFX/Transaction.html">Transaction</a></code></li><li><code><a href="../../OFX/TransactionCollection.html">TransactionCollection</a></code></li></ul></details></li></ul>
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../../OFX.html">OFX</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Balance.html">Balance</a></code></li><li><code><a href="../../OFX/BankAccount.html">BankAccount</a></code></li><li><code><a href="../../OFX/BankStatement.html">BankStatement</a></code></li><li><details><summary><code><a href="../../OFX/Base.html">Base</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Base/Account.html">Account</a></code></li><li><code><a href="../../OFX/Base/Document.html">Document</a></code></li><li><code><a href="../../OFX/Base/Entity.html">Entity</a></code></li><li><code><a href="../../OFX/Base/Statement.html">Statement</a></code></li></ul></details></li><li><details><summary><code><a href="../../OFX/Configuration.html">Configuration</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Configuration/DateParser.html">DateParser</a></code></li><li><code><a href="../../OFX/Configuration/MappingApplicator.html">MappingApplicator</a></code></li><li><code><a href="../../OFX/Configuration/SectionProxy.html">SectionProxy</a></code></li></ul></details></li><li><code><a href="../../OFX/CreditCardAccount.html">CreditCardAccount</a></code></li><li><code><a href="../../OFX/CreditCardStatement.html">CreditCardStatement</a></code></li><li><details><summary><code><a href="../../OFX/Error.html">Error</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Error/InvalidBody.html">InvalidBody</a></code></li><li><code><a href="../../OFX/Error/InvalidConfiguration.html">InvalidConfiguration</a></code></li><li><code><a href="../../OFX/Error/InvalidHeader.html">InvalidHeader</a></code></li><li><code><a href="../../OFX/Error/MultipleStatements.html">MultipleStatements</a></code></li><li><code><a href="../../OFX/Error/Parse.html">Parse</a></code></li><li><code><a href="../../OFX/Error/UnsupportedEncoding.html">UnsupportedEncoding</a></code></li><li><code><a href="../../OFX/Error/UnsupportedVersion.html">UnsupportedVersion</a></code></li></ul></details></li><li><code><a href="../../OFX/Parser.html">Parser</a></code></li><li><details><summary><code><a href="../../OFX/Tokenizer.html">Tokenizer</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../OFX/Tokenizer/Base.html">Base</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX1.html">OFX1</a></code></li><li><code><a href="../../OFX/Tokenizer/OFX2.html">OFX2</a></code></li></ul></details></li><li><code><a href="../../OFX/Transaction.html">Transaction</a></code></li><li><code><a href="../../OFX/TransactionCollection.html">TransactionCollection</a></code></li></ul></details></li></ul>
   </details>
 </div>
 
 </nav>
 
-<main role="main" aria-labelledby="class-ofx-generators-ejectgenerator">
+<main role="main" aria-labelledby="class-ofx-error-unsupportedencoding">
   
   
     <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
@@ -487,35 +468,27 @@
       
       <li>
         
-        <a href="../../OFX/Generators.html">Generators</a><span class="separator">::</span>
+        <a href="../../OFX/Error.html">Error</a><span class="separator">::</span>
         
       </li>
       
       <li>
         
-        <span>EjectGenerator</span>
+        <span>UnsupportedEncoding</span>
         
       </li>
       
     </ol>
   
 
-  <span id="class-OFX::Generators::EjectGenerator" class="legacy-anchor"></span>
-  <h1 id="class-ofx-generators-ejectgenerator" class="anchor-link class">
-    class OFX::Generators::EjectGenerator
+  <span id="class-OFX::Error::UnsupportedEncoding" class="legacy-anchor"></span>
+  <h1 id="class-ofx-error-unsupportedencoding" class="anchor-link class">
+    class OFX::Error::UnsupportedEncoding
   </h1>
 
   <section class="description">
     
-<p>Ejects <a href="../../OFX.html"><code>OFX</code></a> field mappings into the Rails application so they can be customized.</p>
-
-<p>Creates <code>config/initializers/ofx_mappings.yml</code> with the gem’s default field mappings. The file is auto-detected and loaded by the <a href="../../OFX.html"><code>OFX</code></a> gem on boot —no initializer or <a href="../../OFX.html#method-c-configure"><code>OFX.configure</code></a> call is needed.</p>
-
-<span id="class-OFX::Generators::EjectGenerator-label-Example" class="legacy-anchor"></span>
-<h3 id="class-ofx-generators-ejectgenerator-example"><a href="#class-ofx-generators-ejectgenerator-example">Example</a></h3>
-
-<pre class="ruby"><span class="ruby-identifier">rails</span> <span class="ruby-identifier">generate</span> <span class="ruby-value">ofx_kit</span><span class="ruby-value">:</span><span class="ruby-identifier">eject</span>
-</pre>
+<p>Raised when the file encoding cannot be handled.</p>
 
   </section>
 
@@ -539,58 +512,6 @@
 
 
 
-
-     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
-       <header>
-         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
-       </header>
-
-
-      <div id="method-i-eject_mappings" class="method-detail anchor-link ">
-        <div class="method-header">
-
-            <div class="method-heading">
-              <a href="#method-i-eject_mappings" title="Link to this method">
-                <span class="method-name">eject_mappings</span>
-                <span class="method-args">()</span>
-              </a>
-            </div>
-
-
-
-        </div>
-
-
-          <div class="method-controls">
-            <details class="method-source-toggle">
-              <summary>Source</summary>
-            </details>
-          </div>
-          <div class="method-source-code" id="eject_mappings-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/generators/ofx_kit/eject_generator.rb, line 22</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">eject_mappings</span>
-  <span class="ruby-identifier">copy_file</span> <span class="ruby-string">&#39;</span><span class="ruby-string">ofx_mappings.yml</span><span class="ruby-string">&#39;</span>, <span class="ruby-string">&#39;</span><span class="ruby-string">config/initializers/ofx_mappings.yml</span><span class="ruby-string">&#39;</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-
-
-
-        <div class="method-description">
-
-
-          
-
-
-        </div>
-
-
-
-
-
-      </div>
-
-
-    </section>
 
 
 

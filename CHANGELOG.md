@@ -30,6 +30,9 @@ OFX.configure { |c| c.section.map "TAG", to: "attr" }
 
 `rescue OFX::Error` continues to catch all gem exceptions.
 
+### Removed
+- `rdoc` removed from development dependencies in gemspec — pinned via git reference
+  in `Gemfile` until a new release ships the Aliki template fixes.
 
 ### Added
 - Rails generator `ofx_kit:install` — creates `config/initializers/ofx_kit.rb`
