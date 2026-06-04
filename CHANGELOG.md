@@ -5,20 +5,38 @@ All notable changes to this project will be documented in this file.
 ## [1.1.0] — 2026-06-04
 
 ### Breaking changes
-- `OFX::Errors::*` module removed — error classes now live directly under `OFX`
-  (e.g. `OFX::ParseError`, `OFX::ConfigurationError`). Rescue from `OFX::Error`
-  to catch all gem exceptions.
+
 - Rails generator `ofx_kit:eject` removed in favour of `ofx_kit:install`
 - YAML-based field mappings removed: `OFX::Configuration#load_mappings` and
   auto-loading of `config/initializers/ofx_mappings.yml` are no longer supported.
-  Use `OFX.configure { |c| c.section.map "TAG", to: "attr" }` in a Ruby initializer.
+  Use a Ruby initializer instead.
+
+```ruby
+OFX.configure { |c| c.section.map "TAG", to: "attr" }
+```
+
+- Error classes moved into `OFX::Error` namespace and renamed for clarity:
+
+| Before | After |
+|---|---|
+| `OFX::Errors::*` _(any subclass)_ | `OFX::Error::*` |
+| `OFX::ParseError` | `OFX::Error::Parse` |
+| `OFX::InvalidHeaderError` | `OFX::Error::InvalidHeader` |
+| `OFX::InvalidBodyError` | `OFX::Error::InvalidBody` |
+| `OFX::UnsupportedVersionError` | `OFX::Error::UnsupportedVersion` |
+| `OFX::EncodingError` | `OFX::Error::UnsupportedEncoding` |
+| `OFX::ConfigurationError` | `OFX::Error::InvalidConfiguration` |
+| `OFX::MultipleStatementsError` | `OFX::Error::MultipleStatements` |
+
+`rescue OFX::Error` continues to catch all gem exceptions.
+
 
 ### Added
 - Rails generator `ofx_kit:install` — creates `config/initializers/ofx_kit.rb`
   with all field mapping options and behavioral settings pre-written and commented,
   ready to uncomment and customize.
 - Mapping the same XML key twice in an `OFX.configure` block now raises
-  `OFX::ConfigurationError` instead of silently overwriting the first mapping.
+  `OFX::Error::InvalidConfiguration` instead of silently overwriting the first mapping.
 
 ## [1.0.2] — 2026-06-02
 
