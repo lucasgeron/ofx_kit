@@ -2,7 +2,7 @@
 
 require 'rails/generators'
 
-module OFX
+module OfxKit
   module Generators
     # Generates an OFX Kit initializer with all configuration options
     # pre-written and commented, ready to uncomment and customize.

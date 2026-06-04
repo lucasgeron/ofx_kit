@@ -17,6 +17,8 @@ All notable changes to this project will be documented in this file.
 - Rails generator `ofx_kit:install` — creates `config/initializers/ofx_kit.rb`
   with all field mapping options and behavioral settings pre-written and commented,
   ready to uncomment and customize.
+- Mapping the same XML key twice in an `OFX.configure` block now raises
+  `OFX::ConfigurationError` instead of silently overwriting the first mapping.
 
 ## [1.0.2] — 2026-06-02
 

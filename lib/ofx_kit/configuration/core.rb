@@ -6,11 +6,12 @@ module OFX
   ##
   # Manages XML-to-Ruby field mappings used during OFX document parsing.
   #
-  # Mappings are split into two layers:
-  # - *Core* (+core_mappings.yml+): OFX-standard fields whose Ruby attribute names are
-  #   referenced by name inside Base::Builder. These cannot be overridden.
-  # - *User* (+field_mappings.yml+): default convenience mappings that can be extended
-  #   or renamed at runtime via the OFX.configure block.
+  # Mappings are resolved in three layers (last wins):
+  # - *Core* (+core_mappings.yml+): OFX-standard fields referenced by name inside
+  #   Base::Builder. These cannot be overridden.
+  # - *Default* (+field_mappings.yml+): built-in convenience mappings (e.g. FITID → fit_id).
+  #   They can be renamed via the OFX.configure block.
+  # - *User*: explicit mappings added at runtime via the OFX.configure block.
   class Configuration
     ##
     # Absolute path to the built-in core OFX field mappings (read-only).
@@ -38,12 +39,14 @@ module OFX
       @multi_statement_warnings = true
 
       core = YAML.safe_load_file(CORE_MAPPINGS_PATH)
-      @sections    = core.fetch('SECTIONS', {})
-      @core_fields = core.fetch('FIELDS', {})
+      @sections       = core.fetch('SECTIONS', {})
+      @core_fields    = core.fetch('FIELDS', {})
       @section_to_tag = @sections.invert
 
-      user = YAML.safe_load_file(MAPPINGS_PATH)
-      @user_fields = user.fetch('FIELDS', {})
+      defaults = YAML.safe_load_file(MAPPINGS_PATH)
+      @default_fields = defaults.fetch('FIELDS', {})
+
+      @user_fields = {}
     end
 
     ##
@@ -80,12 +83,14 @@ module OFX
     ##
     # Returns the merged Hash of XML tag to Ruby attribute mappings for the given
     # +section_name+ (String or Symbol).
-    # Core mappings take precedence; user mappings extend them.
+    # Resolution order: core → default → user (user wins).
     def xml_mappings_for(section_name)
       tag = xml_tag_for(section_name)
       return {} unless tag
 
-      (@core_fields[tag] || {}).merge(@user_fields[tag] || {})
+      (@core_fields[tag] || {})
+        .merge(@default_fields[tag] || {})
+        .merge(@user_fields[tag] || {})
     end
   end
 end

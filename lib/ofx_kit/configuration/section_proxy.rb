@@ -16,7 +16,7 @@ module OFX
       # Maps +xml_key+ (the OFX XML element name, String) to a Ruby attribute name
       # via the +to+ keyword (String or Symbol) for this section.
       #
-      # Raises ConfigurationError if +xml_key+ is a core-protected field.
+      # Raises ConfigurationError if +xml_key+ is a core-protected field or has already been mapped.
       #
       # === Example: Map a custom bank-specific field
       #
@@ -32,6 +32,12 @@ module OFX
         end
 
         @user_fields[@xml_tag] ||= {}
+
+        if @user_fields[@xml_tag].key?(xml_key)
+          raise OFX::ConfigurationError,
+                "Duplicate mapping for '#{@xml_tag}.#{xml_key}' — already mapped to '#{@user_fields[@xml_tag][xml_key]}'"
+        end
+
         @user_fields[@xml_tag][xml_key] = to
       end
     end
