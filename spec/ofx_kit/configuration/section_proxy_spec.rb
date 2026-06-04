@@ -20,12 +20,12 @@ RSpec.describe OFX::Configuration::SectionProxy do
 
   it 'raises ConfigurationError when overriding a core field' do
     expect { proxy.map('TRNAMT', to: 'foobar') }
-      .to raise_error(OFX::ConfigurationError, /Cannot override core mapping.*TRNAMT/)
+      .to raise_error(OFX::Error::InvalidConfiguration, /Cannot override core mapping.*TRNAMT/)
   end
 
   it 'raises ConfigurationError when mapping the same XML key twice' do
     proxy.map('HISPAYEEMEMO', to: 'first')
     expect { proxy.map('HISPAYEEMEMO', to: 'second') }
-      .to raise_error(OFX::ConfigurationError, /Duplicate mapping.*HISPAYEEMEMO.*first/)
+      .to raise_error(OFX::Error::InvalidConfiguration, /Duplicate mapping.*HISPAYEEMEMO.*first/)
   end
 end

@@ -134,12 +134,12 @@ RSpec.describe OFX::Parser do
 
     it '#account raises MultipleStatementsError mentioning `accounts`' do
       expect { parser.account }
-        .to raise_error(OFX::MultipleStatementsError, /`accounts`/)
+        .to raise_error(OFX::Error::MultipleStatements, /`accounts`/)
     end
 
     it '#balance raises MultipleStatementsError mentioning `balances`' do
       expect { parser.balance }
-        .to raise_error(OFX::MultipleStatementsError, /`balances`/)
+        .to raise_error(OFX::Error::MultipleStatements, /`balances`/)
     end
 
     it '#accounts returns all accounts' do
@@ -170,7 +170,7 @@ RSpec.describe OFX::Parser do
   describe 'error handling' do
     it 'raises InvalidHeaderError for a malformed file' do
       expect { described_class.new(fixture('malformed.ofx')) }
-        .to raise_error(OFX::InvalidHeaderError)
+        .to raise_error(OFX::Error::InvalidHeader)
     end
 
     it 'raises Errno::ENOENT for a missing file' do
@@ -185,7 +185,51 @@ RSpec.describe OFX::Parser do
 
     it 'raises InvalidBodyError for a malformed OFX2 file' do
       expect { described_class.new(fixture('malformed_ofx2.ofx')) }
-        .to raise_error(OFX::InvalidBodyError)
+        .to raise_error(OFX::Error::InvalidBody)
+    end
+
+    it 'raises InvalidBodyError when CURDEF tag is missing' do
+      expect { described_class.new(fixture('bank_no_curdef.ofx')) }
+        .to raise_error(OFX::Error::InvalidBody, /Missing required CURDEF tag/)
+    end
+  end
+
+  describe 'multi-currency support' do
+    subject(:parser) { described_class.new(fixture('bank_multi_currency.ofx')) }
+
+    it 'parses two statements' do
+      expect(parser.statements.length).to eq(2)
+    end
+
+    it 'resolves the USD account currency from CURDEF' do
+      usd_account = parser.accounts.find { |a| a.account_id == '55555-5' }
+      expect(usd_account.currency).to eq('USD')
+    end
+
+    it 'resolves the GBP account currency from CURDEF' do
+      gbp_account = parser.accounts.find { |a| a.account_id == '66666-6' }
+      expect(gbp_account.currency).to eq('GBP')
+    end
+
+    it 'does not mix up currencies between accounts' do
+      currencies = parser.accounts.map(&:currency)
+      expect(currencies).to contain_exactly('USD', 'GBP')
+    end
+
+    it 'uses the correct currency for transaction amounts' do
+      usd_stmt = parser.statements.find { |s| s.account.account_id == '55555-5' }
+      gbp_stmt = parser.statements.find { |s| s.account.account_id == '66666-6' }
+
+      expect(usd_stmt.transactions.first.amount.currency.iso_code).to eq('USD')
+      expect(gbp_stmt.transactions.first.amount.currency.iso_code).to eq('GBP')
+    end
+
+    it 'uses the correct currency for balances' do
+      usd_stmt = parser.statements.find { |s| s.account.account_id == '55555-5' }
+      gbp_stmt = parser.statements.find { |s| s.account.account_id == '66666-6' }
+
+      expect(usd_stmt.balance.amount.currency.iso_code).to eq('USD')
+      expect(gbp_stmt.balance.amount.currency.iso_code).to eq('GBP')
     end
   end
 

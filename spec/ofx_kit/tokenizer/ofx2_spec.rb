@@ -27,7 +27,7 @@ RSpec.describe OFX::Tokenizer::OFX2 do
 
     it 'raises InvalidBodyError' do
       expect { described_class.new(content) }
-        .to raise_error(OFX::InvalidBodyError, /OFX2 body/)
+        .to raise_error(OFX::Error::InvalidBody, /OFX2 body/)
     end
   end
 

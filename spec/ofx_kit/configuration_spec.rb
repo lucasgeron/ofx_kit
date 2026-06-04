@@ -54,18 +54,18 @@ RSpec.describe OFX::Configuration do
 
     it 'raises ConfigurationError when overriding a core transaction field' do
       expect { config.transaction.map 'TRNAMT', to: 'foobar' }
-        .to raise_error(OFX::ConfigurationError, /Cannot override core mapping.*TRNAMT/)
+        .to raise_error(OFX::Error::InvalidConfiguration, /Cannot override core mapping.*TRNAMT/)
     end
 
     it 'raises ConfigurationError when overriding CURDEF on bank_statement' do
       expect { config.bank_statement.map 'CURDEF', to: 'foobar' }
-        .to raise_error(OFX::ConfigurationError, /Cannot override core mapping.*CURDEF/)
+        .to raise_error(OFX::Error::InvalidConfiguration, /Cannot override core mapping.*CURDEF/)
     end
 
     it 'raises ConfigurationError when the same XML key is mapped twice' do
       config.transaction.map 'HISPAYEEMEMO', to: 'extended_memo'
       expect { config.transaction.map 'HISPAYEEMEMO', to: 'other_attr' }
-        .to raise_error(OFX::ConfigurationError, /Duplicate mapping.*HISPAYEEMEMO.*extended_memo/)
+        .to raise_error(OFX::Error::InvalidConfiguration, /Duplicate mapping.*HISPAYEEMEMO.*extended_memo/)
     end
   end
 

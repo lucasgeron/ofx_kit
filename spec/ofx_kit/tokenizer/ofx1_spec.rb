@@ -54,7 +54,7 @@ RSpec.describe OFX::Tokenizer::OFX1 do
 
     it 'raises InvalidHeaderError' do
       expect { described_class.new(content) }
-        .to raise_error(OFX::InvalidHeaderError, /Missing <OFX> tag/)
+        .to raise_error(OFX::Error::InvalidHeader, /Missing <OFX> tag/)
     end
   end
 end

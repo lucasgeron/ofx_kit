@@ -52,7 +52,7 @@ RSpec.describe OFX::Configuration::MappingApplicator do
 
     it 'raises InvalidBodyError when CURDEF is absent' do
       expect { applicator.currency_for(node_without_currency, :bank_statement) }
-        .to raise_error(OFX::InvalidBodyError, /Missing required CURDEF tag/)
+        .to raise_error(OFX::Error::InvalidBody, /Missing required CURDEF tag/)
     end
   end
 end
