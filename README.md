@@ -1,6 +1,8 @@
 # OFX Kit
 
-[![Gem Version](https://badge.fury.io/rb/ofx_kit.svg)](https://badge.fury.io/rb/ofx_kit) [![Downloads](https://img.shields.io/gem/dt/ofx_kit?label=Downloads)](https://rubygems.org/gems/ofx_kit)
+[![GitHub Repo](https://img.shields.io/badge/OFX%20Kit-blue?label=github&logo=github)](https://github.com/lucasgeron/ofx_kit)
+[![Gem Version](https://img.shields.io/gem/v/ofx_kit?logo=rubygems&logoColor=%23e9573f&label=rubygems)](https://rubygems.org/gems/ofx_kit) 
+[![Gem Total Downloads](https://img.shields.io/gem/dt/ofx_kit?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0xMiAzdjEwbDQtNGgtM1YzaC0ydjZIOGw0IDRWM3pNNSAyMGgxNHYtMkg1djJ6IiBmaWxsPSIjZmZmIi8%2BPC9zdmc%2B&logoColor=white)](https://rubygems.org/gems/ofx_kit)
 
 
 A Ruby gem for parsing OFX (Open Financial Exchange) files. Supports OFX 1.x (SGML) and OFX 2.x (XML), bank statements and credit card statements, with a fluent API and configurable field mappings.
@@ -10,7 +12,7 @@ A Ruby gem for parsing OFX (Open Financial Exchange) files. Supports OFX 1.x (SG
 Add to your Gemfile:
 
 ```ruby
-gem 'ofx_kit', '~> 1.0'
+gem 'ofx_kit', '~> 1.0', '>= 1.0.2'
 ```
 
 ## Usage
