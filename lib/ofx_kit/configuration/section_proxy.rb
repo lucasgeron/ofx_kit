@@ -27,14 +27,14 @@ module OFX
       def map(xml_key, to:)
         core_attr = @core_fields.dig(@xml_tag.to_s, xml_key.to_s)
         if core_attr
-          raise OFX::ConfigurationError,
+          raise OFX::Error::InvalidConfiguration,
                 "Cannot override core mapping '#{@xml_tag}.#{xml_key}' (reserved as '#{core_attr}')"
         end
 
         @user_fields[@xml_tag] ||= {}
 
         if @user_fields[@xml_tag].key?(xml_key)
-          raise OFX::ConfigurationError,
+          raise OFX::Error::InvalidConfiguration,
                 "Duplicate mapping for '#{@xml_tag}.#{xml_key}' — already mapped to '#{@user_fields[@xml_tag][xml_key]}'"
         end
 

@@ -1,26 +1,10 @@
 # frozen_string_literal: true
 
-module OFX
-  class Error < StandardError; end
-
-  class ParseError < Error; end
-
-  class InvalidHeaderError < ParseError; end
-
-  class InvalidBodyError < ParseError; end
-
-  class UnsupportedVersionError < Error
-    attr_reader :version
-
-    def initialize(version)
-      @version = version
-      super("Unsupported OFX version: #{version}")
-    end
-  end
-
-  class EncodingError < Error; end
-
-  class ConfigurationError < Error; end
-
-  class MultipleStatementsError < Error; end
-end
+require_relative 'errors/error'
+require_relative 'errors/parse'
+require_relative 'errors/invalid_header'
+require_relative 'errors/invalid_body'
+require_relative 'errors/unsupported_version'
+require_relative 'errors/unsupported_encoding'
+require_relative 'errors/invalid_configuration'
+require_relative 'errors/multiple_statements'

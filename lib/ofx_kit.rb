@@ -71,13 +71,13 @@ module OFX
     #
     # :yields: config
     #
-    # Raises ConfigurationError if the block raises any error.
+    # Raises OFX::Error::InvalidConfiguration if the block raises any error.
     def configure
       yield config
-    rescue ConfigurationError
+    rescue Error::InvalidConfiguration
       raise
     rescue StandardError => e
-      raise ConfigurationError, e.message
+      raise Error::InvalidConfiguration, e.message
     end
 
     ##

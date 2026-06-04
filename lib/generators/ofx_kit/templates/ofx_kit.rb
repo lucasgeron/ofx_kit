@@ -7,7 +7,7 @@ OFX.configure do |config|
   # Map OFX XML tags to Ruby attribute names on domain objects.
   # Uncomment any line to override its default, or add new lines for custom tags.
   #
-  # Protected core fields cannot be remapped (raises OFX::ConfigurationError):
+  # Protected core fields cannot be remapped (raises OFX::Error::InvalidConfiguration):
   #   CURDEF, TRNAMT, DTPOSTED, DTUSER, BALAMT, DTASOF
   #
   # Default transaction fields (STMTTRN):

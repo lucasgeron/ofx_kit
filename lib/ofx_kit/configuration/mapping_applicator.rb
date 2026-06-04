@@ -23,7 +23,7 @@ module OFX
       def currency_for(node, section)
         xml_tag = OFX.config.xml_mappings_for(section).key('currency')
         value = xml_tag && text_at(node, xml_tag)
-        raise InvalidBodyError, 'Missing required CURDEF tag' if value.nil? || value.empty?
+        raise OFX::Error::InvalidBody, 'Missing required CURDEF tag' if value.nil? || value.empty?
 
         value
       end
