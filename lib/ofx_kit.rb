@@ -8,14 +8,7 @@ require 'stringio'
 require 'time'
 
 require_relative 'ofx_kit/version'
-require_relative 'ofx_kit/errors/error'
-require_relative 'ofx_kit/errors/parse_error'
-require_relative 'ofx_kit/errors/invalid_header_error'
-require_relative 'ofx_kit/errors/invalid_body_error'
-require_relative 'ofx_kit/errors/unsupported_version_error'
-require_relative 'ofx_kit/errors/encoding_error'
-require_relative 'ofx_kit/errors/configuration_error'
-require_relative 'ofx_kit/errors/multiple_statements_error'
+require_relative 'ofx_kit/errors'
 require_relative 'ofx_kit/configuration/core'
 require_relative 'ofx_kit/configuration/section_proxy'
 require_relative 'ofx_kit/configuration/date_parser'
@@ -78,13 +71,13 @@ module OFX
     #
     # :yields: config
     #
-    # Raises Errors::ConfigurationError if the block raises any error.
+    # Raises ConfigurationError if the block raises any error.
     def configure
       yield config
-    rescue Errors::ConfigurationError
+    rescue ConfigurationError
       raise
     rescue StandardError => e
-      raise Errors::ConfigurationError, e.message
+      raise ConfigurationError, e.message
     end
 
     ##

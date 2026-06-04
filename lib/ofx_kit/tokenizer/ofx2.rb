@@ -11,7 +11,7 @@ module OFX
         content = convert_to_utf8(@content)
         doc     = Nokogiri::XML(content, &:nonet)
 
-        raise Errors::InvalidBodyError, "OFX2 body could not be parsed: #{doc.errors.first}" if doc.errors.any?
+        raise InvalidBodyError, "OFX2 body could not be parsed: #{doc.errors.first}" if doc.errors.any?
 
         @headers = parse_headers(doc)
         @body    = doc

@@ -47,7 +47,7 @@ module OFX
     ##
     # Returns the account for files containing a single statement
     # (BankAccount, CreditCardAccount, or +nil+).
-    # Raises Errors::MultipleStatementsError if the file contains more than one statement.
+    # Raises MultipleStatementsError if the file contains more than one statement.
     #
     # === Example
     #
@@ -57,7 +57,7 @@ module OFX
     #   ofx.account.bank_id       #=> "021000021"   # BankAccount only
     def account
       if statements.length > 1
-        raise Errors::MultipleStatementsError, 'File contains multiple statements. Use `accounts` to get all accounts.'
+        raise MultipleStatementsError, 'File contains multiple statements. Use `accounts` to get all accounts.'
       end
 
       statements.first&.account
@@ -98,7 +98,7 @@ module OFX
 
     ##
     # Returns the balance for files containing a single statement (Balance or +nil+).
-    # Raises Errors::MultipleStatementsError if the file contains more than one statement.
+    # Raises MultipleStatementsError if the file contains more than one statement.
     #
     # === Example
     #
@@ -108,7 +108,7 @@ module OFX
     #   ofx.balance.posted_at      #=> 2024-01-31 00:00:00 +0000
     def balance
       if statements.length > 1
-        raise Errors::MultipleStatementsError, 'File contains multiple statements. Use `balances` to get all balances.'
+        raise MultipleStatementsError, 'File contains multiple statements. Use `balances` to get all balances.'
       end
 
       statements.first&.balance

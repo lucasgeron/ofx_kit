@@ -14,7 +14,7 @@ module OFX
         content = convert_to_utf8(@content)
         parts   = content.split(/<OFX>/i, 2)
 
-        raise Errors::InvalidHeaderError, 'Missing <OFX> tag in OFX file' if parts.size < 2
+        raise InvalidHeaderError, 'Missing <OFX> tag in OFX file' if parts.size < 2
 
         @headers = parse_headers(parts[0])
         @body    = parse_body("<OFX>#{parts[1]}")
@@ -35,7 +35,7 @@ module OFX
       def parse_body(raw)
         normalized = normalize_sgml(raw)
         doc = Nokogiri::XML(normalized, &:nonet)
-        raise Errors::InvalidBodyError, "OFX body could not be parsed: #{doc.errors.first}" if doc.errors.any?
+        raise InvalidBodyError, "OFX body could not be parsed: #{doc.errors.first}" if doc.errors.any?
 
         doc
       end

@@ -16,7 +16,7 @@ module OFX
       # Maps +xml_key+ (the OFX XML element name, String) to a Ruby attribute name
       # via the +to+ keyword (String or Symbol) for this section.
       #
-      # Raises Errors::ConfigurationError if +xml_key+ is a core-protected field.
+      # Raises ConfigurationError if +xml_key+ is a core-protected field.
       #
       # === Example: Map a custom bank-specific field
       #
@@ -27,7 +27,7 @@ module OFX
       def map(xml_key, to:)
         core_attr = @core_fields.dig(@xml_tag.to_s, xml_key.to_s)
         if core_attr
-          raise OFX::Errors::ConfigurationError,
+          raise OFX::ConfigurationError,
                 "Cannot override core mapping '#{@xml_tag}.#{xml_key}' (reserved as '#{core_attr}')"
         end
 

@@ -101,7 +101,7 @@ module OFX
     # into the user-layer configuration.
     # The file must have a top-level +FIELDS+ key. Core OFX fields cannot be overridden.
     #
-    # Raises Errors::ConfigurationError if the file is missing, malformed, references
+    # Raises ConfigurationError if the file is missing, malformed, references
     # unknown sections, or attempts to override a core field mapping.
     #
     # === Example: Load a custom mappings file
@@ -117,13 +117,13 @@ module OFX
     #     STMTTRN:
     #       MYFIELD: my_attribute
     def load_mappings(path)
-      raise Errors::ConfigurationError, "Mappings file not found: #{path}" unless File.exist?(path)
+      raise ConfigurationError, "Mappings file not found: #{path}" unless File.exist?(path)
 
       raw = YAML.safe_load_file(path)
-      raise Errors::ConfigurationError, 'Invalid mappings file: expected a Hash' unless raw.is_a?(Hash)
+      raise ConfigurationError, 'Invalid mappings file: expected a Hash' unless raw.is_a?(Hash)
 
       fields = raw.fetch('FIELDS') do
-        raise Errors::ConfigurationError, "Invalid mappings file: missing top-level 'FIELDS' key"
+        raise ConfigurationError, "Invalid mappings file: missing top-level 'FIELDS' key"
       end
 
       fields.each { |tag, mappings| merge_user_section(tag, mappings) }
@@ -133,11 +133,11 @@ module OFX
 
     def merge_user_section(xml_tag, mappings)
       unless @sections.key?(xml_tag.to_s)
-        raise Errors::ConfigurationError, "Unknown section '#{xml_tag}'. Valid sections: #{@sections.keys.join(', ')}"
+        raise ConfigurationError, "Unknown section '#{xml_tag}'. Valid sections: #{@sections.keys.join(', ')}"
       end
 
       unless mappings.is_a?(Hash)
-        raise Errors::ConfigurationError, "Mapping value for '#{xml_tag}' must be a Hash, got #{mappings.class}"
+        raise ConfigurationError, "Mapping value for '#{xml_tag}' must be a Hash, got #{mappings.class}"
       end
 
       mappings.each_key { |k| assert_not_core!(xml_tag, k) }
@@ -150,7 +150,7 @@ module OFX
       core_attr = @core_fields.dig(xml_tag.to_s, xml_key.to_s)
       return unless core_attr
 
-      raise Errors::ConfigurationError,
+      raise ConfigurationError,
             "Cannot override core mapping '#{xml_tag}.#{xml_key}' (reserved as '#{core_attr}')"
     end
   end
