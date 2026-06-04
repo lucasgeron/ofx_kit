@@ -2,8 +2,8 @@
 
 require 'rails/generators'
 
-module OfxKit
-  module Generators
+module OfxKit # :nodoc:
+  module Generators # :nodoc:
     # Generates an OFX Kit initializer with all configuration options
     # pre-written and commented, ready to uncomment and customize.
     #
